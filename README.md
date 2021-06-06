@@ -1,3 +1,11 @@
+参考サイト
+- https://gotohayato.com/content/517/
+- https://qiita.com/KZ-taran/items/5a460a41dca9d94d21cc
+- https://github.com/gh640/nextjs-blog-example-ja
+- http://ganow.me/article/blog-system-configuration
+- https://zenn.dev/stin/scraps/ec71e0bfde8973
+- https://mizchi.dev/slides/develop-mizchi-dev
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
