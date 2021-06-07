@@ -1,4 +1,4 @@
-参考サイト
+参考サイト(これらのサイトを参考に作る予定)
 - https://gotohayato.com/content/517/
 - https://qiita.com/KZ-taran/items/5a460a41dca9d94d21cc
 - https://github.com/gh640/nextjs-blog-example-ja
