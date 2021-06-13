@@ -9,7 +9,7 @@ interface PostData {
   date: string
   contentHtml: string
 }
-export default function Post({ postData }) {
+export default function Post({ postData }: { postData: PostData }) {
   return (
     <Layout>
       <Head>
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: any }) {
   const postData = await getPostData(params.id)
   return {
     props: {

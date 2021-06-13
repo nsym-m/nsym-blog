@@ -13,7 +13,7 @@ const PaperItem = styled(Paper)`
   padding: ${(props) => props.theme.spacing(2)}px;
 `
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData }: { allPostsData: any }) {
   return (
     <Layout home>
       <Head>
@@ -29,7 +29,7 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, date, title }: { id: string, date: string, title: string }) => (
             <PaperItem component="li" key={id} variant="outlined">
               <Link href="/posts/[id]" as={`/posts/${id}`}>
                 <a>{title}</a>
