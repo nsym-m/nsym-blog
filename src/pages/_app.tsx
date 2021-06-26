@@ -8,6 +8,7 @@ import {
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import theme from '../styles/theme'
+import "highlight.js/styles/agate.css";
 
 const MyApp = ({ Component, pageProps }: {Component: any, pageProps: any}): JSX.Element => {
   // Remove the server-side injected CSS.(https://material-ui.com/guides/server-rendering/)
