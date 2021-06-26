@@ -5,7 +5,7 @@ import remark from 'remark'
 import html from 'remark-html'
 import highlight from 'remark-highlight.js'
 
-const postsDirectory = path.join(process.cwd(), 'posts')
+const postsDirectory = path.join(process.cwd(), 'markdown/posts')
 
 type MatterData = {
   title: string,

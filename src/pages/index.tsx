@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
+import { getHeaderHtml } from '../lib/header'
 import Link from 'next/link'
 import Date from '../components/date'
 import Paper from '@material-ui/core/Paper'
@@ -13,7 +14,14 @@ const PaperItem = styled(Paper)`
   padding: ${(props) => props.theme.spacing(2)}px;
 `
 
-export default function Home({ allPostsData }: { allPostsData: any }) {
+export default function Home(
+  { allPostsData,
+    headerHtml
+  }:
+  { allPostsData: any,
+    headerHtml: string
+  }
+  ) {
   return (
     <Layout home>
       <Head>
@@ -24,11 +32,7 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
         </Link>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+        <div dangerouslySetInnerHTML={{ __html: headerHtml }} />
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -52,8 +56,12 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
 
 const allPostsData = getSortedPostsData()
 
-export const getStaticProps = () => ({
-  props: {
-    allPostsData: allPostsData
+export async function getStaticProps(){
+  const headerHtml = await getHeaderHtml()
+  return {
+    props: {
+      allPostsData: allPostsData,
+      headerHtml: headerHtml
+    }
   }
-})
+}
