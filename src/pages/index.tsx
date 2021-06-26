@@ -17,7 +17,11 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <Link href="/">
+          <a>
+            <title>{siteTitle}</title>
+          </a>
+        </Link>
       </Head>
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
