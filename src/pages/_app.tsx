@@ -8,7 +8,8 @@ import {
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import theme from '../styles/theme'
-import "highlight.js/styles/agate.css";
+import { useGoogleAnalytics } from "../lib/gtag";
+
 
 const MyApp = ({ Component, pageProps }: {Component: any, pageProps: any}): JSX.Element => {
   // Remove the server-side injected CSS.(https://material-ui.com/guides/server-rendering/)
@@ -18,12 +19,20 @@ const MyApp = ({ Component, pageProps }: {Component: any, pageProps: any}): JSX.
       jssStyles.parentNode.removeChild(jssStyles)
     }
   }, [])
+  useGoogleAnalytics();
+
+  // return (
+  //   <ThemeProvider>
+  //     <Layout>
+  //       <Component {...pageProps} />
+  //     </Layout>
+  //   </ThemeProvider>
+  // );
 
   return (
     <StylesProvider injectFirst>
       <MaterialUIThemeProvider theme={theme}>
         <StyledComponentsThemeProvider theme={theme}>
-          <CssBaseline />
           <Component {...pageProps} />
         </StyledComponentsThemeProvider>
       </MaterialUIThemeProvider>
