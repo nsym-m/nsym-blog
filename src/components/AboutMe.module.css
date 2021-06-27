@@ -1,0 +1,55 @@
+.icon {
+  font-size: 1.8rem;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.aboutme {
+  display: flex;
+  align-items: center;
+  padding: 1.6rem 0.8rem;
+  margin: auto;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 9.6rem;
+}
+
+.biography {
+  margin-left: 1.6rem;
+}
+
+.biography > p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.linkIcon {
+  display: flex;
+  align-items: center;
+  margin: .6rem .7rem 0 0;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.linkIconSpan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkIconSVG {
+  width: 22px;
+  height: 22px;
+  color: #93a5b1;
+}
+
+.social {
+  margin-top: .3rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
