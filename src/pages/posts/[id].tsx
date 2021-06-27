@@ -1,28 +1,36 @@
-import Layout from '../../components/layout'
+import Layout from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
+import SEO from '../../components/SEO'
+import ContentsLayout from '../../components/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'
+import "highlight.js/styles/dark.css";
+import { Article as IArticle } from "../../models";
 
-interface PostData {
-  title: string
-  date: string
-  contentHtml: string
-}
-export default function Post({ postData }: { postData: PostData }) {
+// TODO: 記事の目次を横に表示させる(toc)
+// TODO: コードのシンタックスハイライトがうまく効いていないので調整する
+// TODO: 文字フォント変更
+// TODO: 記事の横幅を広げる
+// TODO: ヘッダー画像の設定
+// TODO: 時間の表記を日本に変更
+
+type Props = { article: IArticle };
+
+export default function Post({ article }: Props) {
   return (
-    <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
-    </Layout>
+    <>
+      <SEO title={article.header.matterData.title} description={article.header.excerpt} />
+      <ContentsLayout >
+        <article>
+          <h1 className={utilStyles.headingXl}>{article.header.matterData.title}</h1>
+          <div className={utilStyles.lightText}>
+            {/* <Date dateString={article.date} /> */}
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
+        </article>
+      </ContentsLayout>
+    </>
   )
 }
 

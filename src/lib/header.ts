@@ -4,7 +4,7 @@ import remark from 'remark'
 import html from 'remark-html'
 import highlight from 'remark-highlight.js'
 
-const headerDirectory = path.join(process.cwd(), 'markdown/header')
+const headerDirectory = path.join(process.cwd(), 'content/header')
 console.log(headerDirectory)
 
 // 自己紹介のヘッダーも markdown から HTML を生成する
