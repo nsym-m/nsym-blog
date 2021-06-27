@@ -5,6 +5,8 @@
 - http://ganow.me/article/blog-system-configuration
 - https://zenn.dev/stin/scraps/ec71e0bfde8973
 - https://mizchi.dev/slides/develop-mizchi-dev
+- https://lopan.jp/
+- https://milieu.ink/
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
