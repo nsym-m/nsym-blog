@@ -3,17 +3,13 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import strip from "strip-markdown";
+import markdownToc from "markdown-toc";
 import html from 'remark-html'
 import highlight from 'remark-highlight.js'
 import { Article as IArticle, FrontMatter } from "../models";
 import { config } from '../config'
 
 const postsDirectory = path.join(process.cwd(), 'content/posts')
-
-type MatterData = {
-  title: string,
-  date: Date
-}
 
 type Props = { article: IArticle };
 
@@ -96,25 +92,33 @@ export function getAllPostIds() {
   })
 }
 
-export async function getPostData(id: string) {
+export async function getArticleData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents)
+  const { frontMatter, content } = getFrontMatter(id, fileContents)
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(highlight)
     .use(html)
-    .process(matterResult.content)
+    .process(content)
   const contentHtml = processedContent.toString()
+
+  const excerpt = await getArticleExcerpt(content)
+
+  const tocMdText = markdownToc(content).content;
 
   // Combine the data with the id and contentHtml
   return {
-    id,
-    contentHtml,
-    ...matterResult.data
-  }
+    header: {
+      id,
+      matterData: frontMatter,
+      excerpt,
+    },
+    bodyMdText: contentHtml,
+    tocMdText,
+  };
 }
 
