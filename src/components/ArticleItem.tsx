@@ -14,7 +14,7 @@ export const ArticleItem: React.VFC<Props> = ({ article }) => {
       {/* <img className={styles.image} src={imageUrl} alt="article catch" /> */}
       <div className={styles.info}>
         <h2 className={styles.title}>
-          <Link href={`/posts/${article.id}`}>
+          <Link href={`/articles/${article.id}`}>
             <a className={styles.titleLink}>{article.matterData.title}</a>
           </Link>
         </h2>

@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout'
-import { getAllPostIds, getArticleData } from '../../lib/posts'
+import { getAllArticleIds, getArticleData } from '../../lib/articles'
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from 'next/head'
 import Date from '../../components/date'
@@ -19,7 +19,7 @@ import { Article as IArticle } from "../../models";
 
 type Props = { article: IArticle };
 
-export default function Post({ article }: Props) {
+export default function Article({ article }: Props) {
   return (
     <>
       <SEO title={article.header.matterData.title} description={article.header.excerpt} />
@@ -37,7 +37,7 @@ export default function Post({ article }: Props) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = getAllArticleIds()
   return {
     paths,
     fallback: false

@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { GetStaticProps, NextPage } from "next";
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedArticlesData } from '../lib/articles'
 import { getHeaderHtml } from '../lib/header'
 import Link from 'next/link'
 import Date from '../components/date'
@@ -24,7 +24,7 @@ export default function Home({ articles }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const articles = await getSortedPostsData();
+  const articles = await getSortedArticlesData();
 
   return {
     props: {
