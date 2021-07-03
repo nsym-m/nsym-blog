@@ -8,7 +8,7 @@ export const Header: React.VFC = props => {
       </div>
       <div className={styles.eyeCatchWrapper}>
         <div className={styles.scrollDownContainer}>
-          <div className={styles.scrollDown}>Scroll down</div>
+          {/* <div className={styles.scrollDown}>Scroll down</div> */}
         </div>
       </div>
     </>

@@ -9,12 +9,12 @@
 
 .eyeCatch {
   width: 100vw;
-  height: 100vh;
+  height: 45vh;
 }
 
 .eyeCatchWrapper {
   width: 100vw;
-  height: 100vh;
+  height: 45vh;
   position: relative;
   border-bottom: 1px solid var(--theme-accent);
 }
