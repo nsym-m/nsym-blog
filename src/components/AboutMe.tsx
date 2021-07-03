@@ -6,13 +6,17 @@ const social = config.social;
 export const AboutMe: React.VFC = () => {
   return (
     <div>
+      <div className={styles.avatarDiv}>
+        <img className={styles.avatar} src="/images/profile.jpg" alt="avatar" />
+      </div>
       <div className={styles.wrapper}>
         <div className={styles.aboutme}>
-          <img className={styles.avatar} src="/images/profile.jpg" alt="avatar" />
           <div className={styles.biography}>
             <p>にしやま</p>
-            <p>犬と猫を飼ってるソフトウェアエンジニア</p>
-            <p>PHPとJSがメインウェポン</p><br></br>
+            <p>
+              犬と猫を飼ってるソフトウェアエンジニア<br></br>
+              PHPとJSがメインウェポン
+            </p>
             <p>勉強したことや実装してみたものなど書いていく予定です。</p>
             <div className={styles.social}>
               <a href={`https://twitter.com/${social.twitter}`} target="_blank" className={styles.linkIcon}>
