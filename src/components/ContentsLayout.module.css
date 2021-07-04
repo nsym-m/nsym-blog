@@ -1,13 +1,11 @@
 .layout {
   display: grid;
-  grid-template-columns: 1fr 40rem;
-  gap: 8rem;
+  grid-template-columns: 1fr 25rem;
 }
 
 .contents {
   width: 60vh;
-  /* width: 40rem; */
-  /* overflow: hidden; */
+  justify-self: center;
 }
 
 .sidemenuContainer {
@@ -59,7 +57,7 @@
 
 @media (max-width: 1200px) {
   .layout {
-    grid-template-columns: 1fr 35rem;
+    grid-template-columns: 1fr 25rem;
   }
 }
 

@@ -2,7 +2,7 @@ import Layout from '../../components/Layout'
 import { getAllArticleIds, getArticleData } from '../../lib/articles'
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from 'next/head'
-import Date from '../../components/date'
+import Date from '../../components/Date'
 import SEO from '../../components/SEO'
 import ContentsLayout from '../../components/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'

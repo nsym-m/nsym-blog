@@ -1,31 +1,26 @@
 import Link from "next/link";
 import { ArticleHeader } from "../models";
-// import { CreatedAt } from "./CreatedAt";
-// import { UpdatedAt } from "./UpdatedAt";
 import styles from "./ArticleItem.module.css";
+import Date from "./Date";
 
 type Props = { article: ArticleHeader };
 
 export const ArticleItem: React.VFC<Props> = ({ article }) => {
-  // const imageUrl = article.matterData.imageUrl ?? "/images/no-image.png";
 
   return (
     <div className={styles.root}>
-      {/* <img className={styles.image} src={imageUrl} alt="article catch" /> */}
-      <div className={styles.info}>
-        <h2 className={styles.title}>
-          <Link href={`/articles/${article.id}`}>
-            <a className={styles.titleLink}>{article.matterData.title}</a>
-          </Link>
-        </h2>
-        <div className={styles.metaInfo}>
-          {/* {!!article.matterData.updatedAt ? (
-            <UpdatedAt updatedAt={article.matterData.updatedAt} />
-          ) : (
-            <CreatedAt createdAt={article.matterData.createdAt} />
-          )} */}
-        </div>
-      </div>
+      <Link href={`/articles/${article.id}`}>
+        <a className={styles.titleLink}>
+          <div className={styles.info}>
+            <div className={styles.title}>
+              {article.matterData.title}
+            </div>
+            <div className={styles.metaInfo}>
+              <Date dateString={article.matterData.createdAt} className={styles.date} />
+            </div>
+          </div>
+        </a>
+      </Link>
     </div>
   );
 };

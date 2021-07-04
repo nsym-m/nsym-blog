@@ -6,7 +6,7 @@ type Props = { articles: ArticleHeader[] };
 
 export const ArticleList: React.VFC<Props> = props => {
   return (
-    <div className={styles.root}>
+    <div>
       {props.articles.map(article => (
         <ArticleItem key={article.id} article={article} />
       ))}

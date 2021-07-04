@@ -4,7 +4,7 @@ import { GetStaticProps, NextPage } from "next";
 import { getSortedArticlesData } from '../lib/articles'
 import { getHeaderHtml } from '../lib/header'
 import Link from 'next/link'
-import Date from '../components/date'
+import Date from '../components/Date'
 import Paper from '@material-ui/core/Paper'
 import SEO from '../components/SEO'
 import { Root } from '../components/Root'
