@@ -48,7 +48,11 @@
 .linkIconSVG {
   width: 22px;
   height: 22px;
-  color: #93a5b1;
+  color: #808080;
+}
+
+.linkIconSVG:hover {
+  color: #3e3f48;
 }
 
 .social {
