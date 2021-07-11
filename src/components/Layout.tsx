@@ -6,7 +6,7 @@ import { AppContainer } from "./AppContainer";
 const Layout: React.FC = props => {
   return (
     <div className={styles.root}>
-      <Header />
+      <Header image="header"/>
       <div className={styles.mainContent}>
         <div className={styles.main}>
           <AppContainer>{props.children}</AppContainer>

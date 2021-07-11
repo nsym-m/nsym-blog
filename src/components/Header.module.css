@@ -10,6 +10,8 @@
 .eyeCatch {
   width: 100vw;
   height: 45vh;
+  /* background-image: url("/images/headers/header.jpg");
+  background-repeat: no-repeat; */
 }
 
 .eyeCatchWrapper {
@@ -38,4 +40,8 @@
   padding-bottom: 0.8rem;
   font-size: 2rem;
   border-bottom: 2px solid var(--theme-secondary);
+}
+
+.backGroundImage {
+  background-image: url("/images/headers/header.jpg");
 }
