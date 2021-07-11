@@ -8,13 +8,6 @@ import ContentsLayout from '../../components/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'
 import { Article as IArticle } from "../../models";
 
-// TODO: 記事の目次を横に表示させる(toc)
-// TODO: コードのシンタックスハイライトがうまく効いていないので調整する
-// TODO: 文字フォント変更
-// TODO: 記事の横幅を広げる
-// TODO: ヘッダー画像の設定
-// TODO: 時間の表記を日本に変更
-// TODO: 型周りでエラーが出てる
 
 type Props = { article: IArticle };
 
