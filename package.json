@@ -10,16 +10,19 @@
     "test-all": "npx yarn-run-all lint check-types format lint:fix"
   },
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@material-ui/core": "^4.11.4",
+    "@stefanprobst/remark-shiki": "^0.1.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.22.1",
     "gray-matter": "^4.0.3",
-    "highlight.js": "^11.0.1",
+    "markdown-toc": "^1.2.0",
     "next": "10.2.3",
+    "next-images": "^1.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "remark": "^13.0.0",
-    "remark-highlight.js": "^6.0.0",
     "remark-html": "^13.0.1",
     "strip-markdown": "^4.0.0"
   },
