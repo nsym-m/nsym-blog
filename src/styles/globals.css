@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+pre {
+  padding: 1em;
+  border-radius: 5px;
+}

@@ -6,7 +6,6 @@ import Date from '../../components/Date'
 import SEO from '../../components/SEO'
 import ContentsLayout from '../../components/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'
-import "highlight.js/styles/dark.css";
 import { Article as IArticle } from "../../models";
 
 // TODO: 記事の目次を横に表示させる(toc)

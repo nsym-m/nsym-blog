@@ -2,11 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
-import strip from "strip-markdown";
-import markdownToc from "markdown-toc";
+import strip from 'strip-markdown'
+import markdownToc from 'markdown-toc'
 import html from 'remark-html'
-import highlight from 'remark-highlight.js'
-import { Article as IArticle, FrontMatter } from "../models";
+import remarkShiki from '@stefanprobst/remark-shiki'
+import { Article as IArticle, FrontMatter } from '../models'
 import { config } from '../config'
 
 const articlesDirectory = path.join(process.cwd(), 'content/articles')
@@ -101,7 +101,7 @@ export async function getArticleData(id: string) {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(highlight)
+    .use(remarkShiki)
     .use(html)
     .process(content)
   const contentHtml = processedContent.toString()
