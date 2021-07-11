@@ -19,9 +19,12 @@ export default function Article({ article }: Props) {
         <article>
           <h1 className={utilStyles.headingXl}>{article.header.matterData.title}</h1>
           <div className={utilStyles.lightText}>
-            {/* <Date dateString={article.date} /> */}
+            <span className={utilStyles.mgr10}>公開日時：<Date dateString={article.header.matterData.createdAt} /></span>
+            {article.header.matterData.updatedAt && (
+              <span className={utilStyles.mgr10}>更新日時：<Date dateString={article.header.matterData.updatedAt??''} /></span>
+            )}
           </div>
-          <div dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
+          <div className={utilStyles.article} dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
         </article>
       </ContentsLayout>
     </>
