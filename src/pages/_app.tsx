@@ -1,5 +1,5 @@
 import "../styles/globals.css"
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useGoogleAnalytics } from "../lib/gtag";
 import Layout from '../components/Layout'
 

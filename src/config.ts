@@ -6,5 +6,4 @@ export const config = {
     github: "nsym-m",
   },
   excerptLength: 160,
-  googleAnalytict: "G-GT831FDES0",
 } as const;

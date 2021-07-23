@@ -11,8 +11,6 @@ import { config } from '../config'
 
 const articlesDirectory = path.join(process.cwd(), 'content/articles')
 
-type Props = { article: IArticle };
-
 function getFrontMatter(
   id: string,
   rawData: string,
