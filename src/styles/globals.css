@@ -22,4 +22,5 @@ a:hover {
 pre {
   padding: 1em;
   border-radius: 5px;
+  overflow:auto;
 }
