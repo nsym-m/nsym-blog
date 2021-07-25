@@ -58,3 +58,12 @@
 .article {
   margin-top: 30px;
 }
+
+.article a {
+  color: #40D99F;
+  text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+}
