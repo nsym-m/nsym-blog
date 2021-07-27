@@ -17,3 +17,5 @@ nishiyama's development blog
 <!-- rebase test -->
 <!-- rebase test -->
 <!-- rebase test -->
+<!-- rebase test -->
+<!-- rebase test -->
