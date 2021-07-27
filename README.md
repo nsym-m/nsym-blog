@@ -1,6 +1,8 @@
 nishiyama's development blog
 
 <!-- rebase test -->
+<!-- rebase test -->
+<!-- rebase test -->
 
 残件
 - サイドバーにTOC追加
