@@ -11,3 +11,5 @@ nishiyama's development blog
 - Twitter共有ボタン
 
 <!-- rebase test -->
+<!-- rebase test -->
+<!-- rebase test -->
