@@ -1,5 +1,7 @@
 nishiyama's development blog
 
+<!-- rebase test -->
+
 残件
 - サイドバーにTOC追加
 - 記事一覧へのリンク
