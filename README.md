@@ -9,3 +9,5 @@ nishiyama's development blog
   - https://stackoverflow.com/questions/51842419/next-js-background-image-css-property-cant-load-the-image
 - 記事の幅もう少し広げる
 - Twitter共有ボタン
+
+<!-- rebase test -->
