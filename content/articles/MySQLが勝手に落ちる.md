@@ -1,7 +1,7 @@
 ---
 title: "MySQLが勝手に落ちる"
 createdAt: "2021-07-25 20:06:00"
-updatedAt: ""
+updatedAt: "2021-08-22 01:01:00"
 ---
 
 こんばんは。
@@ -99,11 +99,12 @@ $ journalctl -u mysqld
 
 "Data Dictionary initialization failed."がそれっぽいので検索。
 
-# 解決？
+# 対策1
 
 いくつか出てきましたが、今回は[MySQL 8 won't start after “Data dictionary upgrading” in log file
 ](https://stackoverflow.com/questions/55846631/mysql-8-wont-start-after-data-dictionary-upgrading-in-log-file)という記事をあてにすることにしました。
 その他に出てきたものは大体設定済みだったので。
+**追記：こちらは解決策ではないので注意**
 
 （my.cnfに`datadir`や`log-error`が設定されていないのでそれらを設定しましょうという内容が多かった）
 
@@ -132,6 +133,29 @@ default-character-set = utf8mb4
 default-character-set = utf8mb4
 ```
 
-とりあえず今回はこんなところで。
+# 原因
 
-では。
+原因が判明したので追記です。
+本当は結構前にわかってたけど更新が遅くなってしまった。。
+
+結論としては、このサーバーはEC2の一番小さいやつを使っていたので、メモリ容量が少なく、MySQLがメモリ圧迫して落ちていました。
+また、デフォルトでswapファイルも存在しないサーバーだったこともあるようです。
+
+対策としては、契約するサーバーのメモリを大きくする、DBサーバーを別にする、swapファイルを作成する、などあります。
+今回はswapファイルを作成したのでその手順も記載します。
+
+# 解決法
+
+```bash
+# メモリ状態の確認（swapがない状態）
+$ sudo free
+# 空の1024mbのファイルを作成
+$ sudo dd if=/dev/zero of=/swapfile bs=1M count = 1024
+# 作成したファイルをswapファイルにする
+$ sudo mkswap /swapfile
+# swapファイルを有効化
+$ sudo swapon /swapfile
+# メモリ状態の確認（作成したswapファイル分が表示されるようになる）
+$ sudo free
+$ sudo systemctl restart mysqld
+```
