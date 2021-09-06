@@ -15,13 +15,13 @@ const SEO: React.VFC<Props> = ({ title, description }) => {
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content="/images/profile.jpg" />
+      <meta property="og:image" content={`${config.siteUrl}/images/profile.jpg`} />
       {description && <meta property="og:description" content={description} />}
       <meta property="og:site_name" content={siteTitle} />
       <meta property="twitter:card" content="summary" />
       <meta property="twitter:creator" content={config.social.twitter} />
       <meta property="twitter:title" content={title} />
-      <meta name="twitter:site" content={config.social.twitter} />
+      <meta property="twitter:site" content={config.social.twitter} />
       {description && <meta property="twitter:description" content={description} />}
     </Head>
   );
