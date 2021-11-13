@@ -1,4 +1,4 @@
-nishiyama's development blog
+nsym's development blog
 
 <!-- rebase test -->
 <!-- rebase test -->
