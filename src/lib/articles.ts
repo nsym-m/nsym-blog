@@ -9,7 +9,7 @@ import remarkShiki from '@stefanprobst/remark-shiki'
 import { Article as IArticle, FrontMatter } from '../models'
 import { config } from '../config'
 
-const articlesDirectory = path.join(process.cwd(), 'content/articles')
+const articlesDirectory = path.join(process.cwd(), 'articles')
 
 function getFrontMatter(
   id: string,
@@ -54,13 +54,11 @@ async function getArticleExcerpt(mdText: string): Promise<string> {
 
 export async function getSortedArticlesData() {
   // Get file names under /articles
-  const fileNames = fs.readdirSync(articlesDirectory)
-  const allArticlesData = fileNames.map(async fileName => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '')
-
-    // Read markdown file as string
-    const fullPath = path.join(articlesDirectory, fileName)
+  const dirNames = fs.readdirSync(articlesDirectory)
+  const allArticlesData = dirNames.map(async dirName => {
+    const id = dirName
+    // articles/{id}/index.md
+    const fullPath = path.join(articlesDirectory, id, config.articleFileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
 
     // Use gray-matter to parse the article metadata section
@@ -91,7 +89,8 @@ export function getAllArticleIds() {
 }
 
 export async function getArticleData(id: string) {
-  const fullPath = path.join(articlesDirectory, `${id}.md`)
+    // articles/{id}/index.md
+  const fullPath = path.join(articlesDirectory, id, config.articleFileName)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the article metadata section

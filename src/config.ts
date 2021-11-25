@@ -6,4 +6,5 @@ export const config = {
     github: "nsym-m",
   },
   excerptLength: 160,
+  articleFileName: "index.md"
 } as const;
