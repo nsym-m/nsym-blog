@@ -22,7 +22,6 @@ const ContentsLayout: React.FC<Props> = props => {
           <div className={styles.aboutme}>
             <AboutMe />
           </div>
-          <div className={styles.otherMenu}>{props.sidemenu}</div>
         </div>
       </div>
       {/* <button
