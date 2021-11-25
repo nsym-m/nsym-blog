@@ -22,7 +22,7 @@ updatedAt: "2021-08-22 01:01:00"
 
 # 問題
 
-`storage/logs/laravel-07-21.log`を見てみたところ、ログイン失敗時のログに以下のように記載されていた。
+`storage/logs/laravel-07-21.log`を見てみたところ、ログイン失敗時のログに以下のように記載されていた。
 ``` 
 ERROR: SQLSTATE[HY000] [2002] Connection refused
 ```
