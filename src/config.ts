@@ -1,5 +1,5 @@
 export const config = {
-  siteTitle: "nsym's development blog",
+  siteTitle: "nsym's blog",
   siteUrl: 'https://nsym.dev',
   social: {
     twitter: 'nsym__m',

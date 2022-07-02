@@ -6,12 +6,11 @@ import ContentsLayout from '../../components/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'
 import { Article as IArticle, ArticleIds } from "../../models"
 import { config } from '../../config'
-import {
-  TwitterIcon,
-  TwitterShareButton,
-} from "react-share"
+import { TwitterSvg } from '../../components/TwitterSvg';
 
 type Props = { article: IArticle };
+
+const intent = 'https://twitter.com/intent/tweet/'
 
 export default function Article({ article }: Props): JSX.Element {
   return (
@@ -28,15 +27,12 @@ export default function Article({ article }: Props): JSX.Element {
           </div>
           <div className={utilStyles.article} dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
         </article>
-        <TwitterShareButton
-          url={`${config.siteUrl}/articles/${article.header.id}`}
-          title={`${config.siteTitle} | ${article.header.matterData.title}`}
-          via={config.social.twitter}
-        >
-          <TwitterIcon size={40} round />
-        </TwitterShareButton>
+        <a href={`${intent}?url=${config.siteUrl}/articles/${article.header.id}&title=${article.header.matterData.title}\n&via=${config.social.twitter}`} target="_blank" rel="noreferrer">
+          <TwitterSvg></TwitterSvg>
+        </a>
       </ContentsLayout>
     </>
+
   )
 }
 
