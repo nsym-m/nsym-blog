@@ -15,16 +15,16 @@ function getFrontMatter(
   id: string,
   rawData: string,
 ): { frontMatter: FrontMatter; content: string } {
-  const matterResult = matter(rawData);
+  const matterResult = matter(rawData)
 
-  const matterData = matterResult.data as Partial<FrontMatter>;
+  const matterData = matterResult.data as Partial<FrontMatter>
 
   if (!matterData.title) {
-    throw new Error(`${id}: title is required in front-matter`);
+    throw new Error(`${id}: title is required in front-matter`)
   }
 
   if (!matterData.createdAt) {
-    throw new Error(`${id}: createdAt is required in front-matter`);
+    throw new Error(`${id}: createdAt is required in front-matter`)
   }
 
   return {
@@ -34,28 +34,30 @@ function getFrontMatter(
       createdAt: matterData.createdAt,
     },
     content: matterResult.content,
-  };
+  }
 }
 
 async function getArticleExcerpt(mdText: string): Promise<string> {
-  const processed = await remark().use(strip).process(mdText);
+  const processed = await remark().use(strip).process(mdText)
 
-  const contentText = processed.toString();
+  const contentText = processed.toString()
 
-  const excerpt = contentText.trim().replace(/\s+/g, " ").slice(0, config.excerptLength);
+  const excerpt = contentText
+    .trim()
+    .replace(/\s+/g, ' ')
+    .slice(0, config.excerptLength)
 
   if (contentText.length > config.excerptLength) {
-    return excerpt + "...";
+    return excerpt + '...'
   }
 
-  return excerpt;
+  return excerpt
 }
-
 
 export async function getSortedArticlesData() {
   // Get file names under /articles
   const dirNames = fs.readdirSync(articlesDirectory)
-  const allArticlesData = dirNames.map(async dirName => {
+  const allArticlesData = dirNames.map(async (dirName) => {
     const id = dirName
     // articles/{id}/index.md
     const fullPath = path.join(articlesDirectory, id, config.articleFileName)
@@ -79,17 +81,17 @@ export async function getSortedArticlesData() {
 
 export function getAllArticleIds() {
   const fileNames = fs.readdirSync(articlesDirectory)
-  return fileNames.map(fileName => {
+  return fileNames.map((fileName) => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, '')
-      }
+        id: fileName.replace(/\.md$/, ''),
+      },
     }
   })
 }
 
 export async function getArticleData(id: string) {
-    // articles/{id}/index.md
+  // articles/{id}/index.md
   const fullPath = path.join(articlesDirectory, id, config.articleFileName)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -105,7 +107,7 @@ export async function getArticleData(id: string) {
 
   const excerpt = await getArticleExcerpt(content)
 
-  const tocMdText = markdownToc(content).content;
+  const tocMdText = markdownToc(content).content
 
   // Combine the data with the id and contentHtml
   return {
@@ -116,6 +118,5 @@ export async function getArticleData(id: string) {
     },
     bodyMdText: contentHtml,
     tocMdText,
-  };
+  }
 }
-
