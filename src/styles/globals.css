@@ -23,4 +23,19 @@ pre {
   padding: 1em;
   border-radius: 5px;
   overflow:auto;
+  background-color: #2e3440ff;
+}
+
+pre code {
+  background-color: #2e3440ff;
+  color: #d8dee9ff;
+}
+
+code {
+  display: inline-block;
+  background: #f0f5f9;
+  padding: 0.04em 0.3em;
+  margin: 0 0.2em;
+  border-radius: 3px;
+  line-height: 1.4;
 }
