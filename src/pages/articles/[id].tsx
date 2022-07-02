@@ -5,7 +5,11 @@ import SEO from '../../components/SEO'
 import ContentsLayout from '../../components/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'
 import { Article as IArticle, ArticleIds } from "../../models"
-
+import { config } from '../../config'
+import {
+  TwitterIcon,
+  TwitterShareButton,
+} from "react-share"
 
 type Props = { article: IArticle };
 
@@ -24,7 +28,13 @@ export default function Article({ article }: Props): JSX.Element {
           </div>
           <div className={utilStyles.article} dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
         </article>
-        {/* <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-text="にしやまの技術ブログ" data-via="nsym__m" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script> */}
+        <TwitterShareButton
+          url={`${config.siteUrl}/articles/${article.header.id}`}
+          title={`${config.siteTitle} | ${article.header.matterData.title}`}
+          via={config.social.twitter}
+        >
+          <TwitterIcon size={40} round />
+        </TwitterShareButton>
       </ContentsLayout>
     </>
   )
