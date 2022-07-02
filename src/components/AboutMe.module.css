@@ -39,22 +39,6 @@
   text-decoration: none;
 }
 
-.linkIconSpan {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.linkIconSVG {
-  width: 28px;
-  height: 28px;
-  color: #808080;
-}
-
-.linkIconSVG:hover {
-  color: #3e3f48;
-}
-
 .social {
   margin-top: .3rem;
   display: flex;
