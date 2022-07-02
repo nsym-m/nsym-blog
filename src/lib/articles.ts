@@ -98,9 +98,15 @@ export async function getArticleData(id: string): Promise<Article> {
   // Use gray-matter to parse the article metadata section
   const { frontMatter, content } = getFrontMatter(id, fileContents)
 
+  const theme = JSON.parse(
+    fs.readFileSync(
+      path.join(process.cwd(), `src/assets/${config.codeTheme}`),
+      'utf-8',
+    ),
+  )
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(remarkShiki)
+    .use(remarkShiki, { theme: theme })
     .use(html)
     .process(content)
   const contentHtml = processedContent.toString()

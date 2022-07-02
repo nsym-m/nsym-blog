@@ -23,11 +23,10 @@ pre {
   padding: 1em;
   border-radius: 5px;
   overflow:auto;
-  background-color: #2e3440ff;
 }
 
 pre code {
-  background-color: #2e3440ff;
+  background-color: #212121;
   color: #d8dee9ff;
 }
 
