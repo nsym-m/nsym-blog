@@ -15,7 +15,7 @@ const SEO: React.VFC<Props> = ({ title, description }) => {
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content={`${config.siteUrl}/images/profile.jpg`} />
+      <meta property="og:image" content={`${config.siteUrl}/images/${config.avatar}`} />
       {description && <meta property="og:description" content={description} />}
       <meta property="og:site_name" content={siteTitle} />
       <meta property="twitter:card" content="summary" />

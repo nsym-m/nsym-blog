@@ -8,5 +8,7 @@ export const config = {
   },
   excerptLength: 160,
   articleFileName: 'index.md',
+  avatar: 'profile.jpg',
+  header: 'header.jpg',
   codeTheme: 'Community-Material-Theme-Darker-High-Contrast.json',
 } as const

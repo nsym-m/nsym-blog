@@ -1,12 +1,12 @@
+import { config } from "../config";
 import styles from "./Header.module.css";
 
-type Props = { image: string };
 
-export const Header: React.VFC<Props> = props => {
+export const Header: React.VFC = () => {
   return (
     <a href="/">
       <div className={`${styles.eyeCatchContainer}`}>
-          <img className={styles.eyeCatch} src={`/images/headers/${props.image}.png`} alt="" />
+          <img className={styles.eyeCatch} src={`/images/headers/${config.header}`} alt="" />
       </div>
       <div className={styles.eyeCatchWrapper}>
         <div className={styles.scrollDownContainer}>
