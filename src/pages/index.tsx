@@ -9,7 +9,7 @@ type Props = {
   articles: IArticleHeader[];
 };
 
-export default function Home({ articles }: Props) {
+export default function Home({ articles }: Props): JSX.Element {
   return (
     <>
       <SEO title="TOP" description="にしやまの技術ブログ" />

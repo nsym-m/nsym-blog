@@ -1,15 +1,15 @@
 import { getAllArticleIds, getArticleData } from '../../lib/articles'
-import { GetStaticProps, GetStaticPaths } from "next";
+import { GetStaticProps } from "next";
 import Date from '../../components/Date'
 import SEO from '../../components/SEO'
 import ContentsLayout from '../../components/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'
-import { Article as IArticle } from "../../models";
+import { Article as IArticle, ArticleIds } from "../../models"
 
 
 type Props = { article: IArticle };
 
-export default function Article({ article }: Props) {
+export default function Article({ article }: Props): JSX.Element {
   return (
     <>
       <SEO title={article.header.matterData.title} description={article.header.excerpt} />
@@ -30,7 +30,10 @@ export default function Article({ article }: Props) {
   )
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths(): Promise<{
+  paths: ArticleIds;
+  fallback: boolean;
+}> {
   const paths = getAllArticleIds()
   return {
     paths,

@@ -22,7 +22,7 @@ type GTagEvent = {
 }
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({ action, category, label, value }: GTagEvent) => {
+export const event = ({ action, category, label, value }: GTagEvent): void => {
   //@ts-ignore
   window.gtag('event', action, {
     event_category: category,
@@ -31,7 +31,7 @@ export const event = ({ action, category, label, value }: GTagEvent) => {
   })
 }
 
-export const useGoogleAnalytics = () => {
+export const useGoogleAnalytics = (): void => {
   const router = useRouter()
 
   useEffect(() => {

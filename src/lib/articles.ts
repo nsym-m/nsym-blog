@@ -6,7 +6,7 @@ import strip from 'strip-markdown'
 import markdownToc from 'markdown-toc'
 import html from 'remark-html'
 import remarkShiki from '@stefanprobst/remark-shiki'
-import { Article as IArticle, FrontMatter } from '../models'
+import { FrontMatter, ArticleIds, Article, ArticleHeaders } from '../models'
 import { config } from '../config'
 
 const articlesDirectory = path.join(process.cwd(), 'articles')
@@ -54,7 +54,7 @@ async function getArticleExcerpt(mdText: string): Promise<string> {
   return excerpt
 }
 
-export async function getSortedArticlesData() {
+export async function getSortedArticlesData(): Promise<ArticleHeaders> {
   // Get file names under /articles
   const dirNames = fs.readdirSync(articlesDirectory)
   const allArticlesData = dirNames.map(async (dirName) => {
@@ -79,7 +79,7 @@ export async function getSortedArticlesData() {
   )
 }
 
-export function getAllArticleIds() {
+export function getAllArticleIds(): ArticleIds {
   const fileNames = fs.readdirSync(articlesDirectory)
   return fileNames.map((fileName) => {
     return {
@@ -90,7 +90,7 @@ export function getAllArticleIds() {
   })
 }
 
-export async function getArticleData(id: string) {
+export async function getArticleData(id: string): Promise<Article> {
   // articles/{id}/index.md
   const fullPath = path.join(articlesDirectory, id, config.articleFileName)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
