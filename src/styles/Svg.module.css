@@ -10,6 +10,16 @@
   color: #808080;
 }
 
+.linkShareIconSVG {
+  width: 38px;
+  height: 38px;
+  color: #808080;
+}
+
+.linkShareIconSVG:hover {
+  color: #3e3f48;
+}
+
 .linkIconSVG:hover {
   color: #3e3f48;
 }

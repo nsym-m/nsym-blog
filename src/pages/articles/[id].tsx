@@ -6,7 +6,7 @@ import ContentsLayout from '../../components/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'
 import { Article as IArticle, ArticleIds } from "../../models"
 import { config } from '../../config'
-import { TwitterSvg } from '../../components/TwitterSvg';
+import { TwitterCircle } from '../../components/TwitterSvg';
 
 type Props = { article: IArticle };
 
@@ -28,7 +28,7 @@ export default function Article({ article }: Props): JSX.Element {
           <div className={utilStyles.article} dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
         </article>
         <a href={`${intent}?url=${config.siteUrl}/articles/${article.header.id}&title=${article.header.matterData.title}\n&via=${config.social.twitter}`} target="_blank" rel="noreferrer">
-          <TwitterSvg></TwitterSvg>
+          <TwitterCircle></TwitterCircle>
         </a>
       </ContentsLayout>
     </>
