@@ -7,11 +7,6 @@
   border-bottom: 1px #aaa solid;
 }
 
-.root:hover {
-  background: #a0abb3;
-	color: #fff;
-}
-
 .info {
   width: 40rem;
   flex: 1;
@@ -37,11 +32,6 @@
   display: -webkit-box;
   -webkit-line-clamp: 4;
   margin: 18px;
-}
-
-.titleLink:hover {
-  background: #a0abb3;
-	color: #fff;
 }
 
 .metaInfo > :not(:first-child) {
