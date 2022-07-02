@@ -10,8 +10,6 @@
     "test-all": "npx yarn-run-all lint check-types format lint:fix"
   },
   "dependencies": {
-    "@fortawesome/free-regular-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
     "@material-ui/core": "^4.11.4",
     "@stefanprobst/remark-shiki": "^0.1.2",
     "classnames": "^2.3.1",
@@ -19,7 +17,6 @@
     "gray-matter": "^4.0.3",
     "markdown-toc": "^1.2.0",
     "next": "10.2.3",
-    "next-images": "^1.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "remark": "^13.0.0",
@@ -32,7 +29,6 @@
     "@types/node": "^15.12.2",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
-    "@types/styled-components": "^5.1.10",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
     "eslint": "^7.28.0",
@@ -41,7 +37,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.1",
-    "styled-components": "^5.3.0",
     "typescript": "^4.3.2"
   },
   "lint-staged": {
