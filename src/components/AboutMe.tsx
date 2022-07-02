@@ -2,7 +2,7 @@ import styles from "./AboutMe.module.css";
 import { config } from "../config";
 import { TwitterSvg } from "./TwitterSvg";
 import { GitHubSvg } from "./GitHubSvg";
-import { ZennSvg } from "./ZennSVG";
+import { ZennSvg } from "./ZennSvg";
 
 const social = config.social;
 
