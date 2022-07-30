@@ -3,6 +3,8 @@ import { config } from "../config";
 import { TwitterSvg } from "./TwitterSvg";
 import { GitHubSvg } from "./GitHubSvg";
 import { ZennSvg } from "./ZennSvg";
+import Link from "next/link";
+import { CatSvg } from "./CatSvg";
 
 const social = config.social;
 
@@ -18,10 +20,11 @@ export const AboutMe: React.VFC = () => {
             <p>にしやま</p>
             <p>
               犬と猫を飼ってるソフトウェアエンジニア<br></br>
-              業務で Go / PHP、趣味で Flutter / Swift / TypeScript などを触ります。
+              業務で Go / PHP、趣味で Flutter / Swift / TypeScript などを触ります。<br></br>
+              以前は受託開発の会社でPHPとJavaScriptをメインに扱っていて、今は某事業会社で漫画アプリのバックエンドエンジニアとして主にGoとたまにPHP, TypeScriptを扱っています。<br></br>
             </p>
             <p>
-              読んだ本の感想や勉強したことなどを書いていく予定です。<br></br>
+              読んだ本の感想や勉強したことなどを↓のブログに書いていく予定です。<br></br>
               プログラムなどの技術的なことはZennの方に書いていく予定です。
             </p>
             <div className={styles.social}>
@@ -34,6 +37,11 @@ export const AboutMe: React.VFC = () => {
               <a href={`https://zenn.dev/${social.zenn}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
                 <ZennSvg></ZennSvg>
               </a>
+              <Link href="/articles">
+                <a className={styles.linkIcon}>
+                  <CatSvg></CatSvg>
+                </a>
+              </Link>
             </div>
           </div>
         </div>

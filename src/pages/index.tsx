@@ -1,29 +1,15 @@
 import React from 'react'
-import { GetStaticProps } from "next";
-import { getSortedArticlesData } from '../lib/articles'
 import SEO from '../components/SEO'
-import { ArticleRoot } from '../components/ArticleRoot'
-import { ArticleHeader as IArticleHeader } from "../models";
+import { AboutMe } from '../components/AboutMe';
+import ContentsLayout from '../components/ContentsLayout';
 
-type Props = {
-  articles: IArticleHeader[];
-};
-
-export default function Home({ articles }: Props): JSX.Element {
+export default function Home(): JSX.Element {
   return (
     <>
       <SEO title="TOP" description="にしやまの技術ブログ" />
-      <ArticleRoot articles={articles} />
+      <ContentsLayout>
+        <AboutMe />
+      </ContentsLayout>
     </>
   )
 }
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const articles = await getSortedArticlesData();
-
-  return {
-    props: {
-      articles
-    },
-  };
-};

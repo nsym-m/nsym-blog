@@ -1,10 +1,12 @@
+import Link from "next/link";
 import { config } from "../config";
 import styles from "./Header.module.css";
 
 
 export const Header: React.VFC = () => {
   return (
-    <a href="/">
+    <Link href="/">
+      <a>
       <div className={`${styles.eyeCatchContainer}`}>
           <img className={styles.eyeCatch} src={`/images/headers/${config.header}`} alt="" />
       </div>
@@ -13,5 +15,6 @@ export const Header: React.VFC = () => {
         </div>
       </div>
     </a>
+    </Link>
   );
 };
