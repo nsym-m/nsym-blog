@@ -1,6 +1,5 @@
 .layout {
   display: grid;
-  grid-template-columns: 1fr 25rem;
 }
 
 .contents {
@@ -10,11 +9,9 @@
 
 .sidemenuContainer {
   background-color: var(--theme-background);
-  /* width: 300px; */
 }
 
 .sidemenu {
-  /* width: 30vh; */
   max-height: 100vh;
   top: 0;
   right: 0;
