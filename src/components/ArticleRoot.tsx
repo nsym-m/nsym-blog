@@ -7,7 +7,7 @@ type Props = {
   articles: ArticleHeader[];
 };
 
-export const Root: React.VFC<Props> = ({ articles }) => {
+export const ArticleRoot: React.VFC<Props> = ({ articles }) => {
   return (
     <ContentsLayout>
       <ArticleList articles={articles} />
