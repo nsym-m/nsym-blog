@@ -1,7 +1,7 @@
 import React from "react";
-import { AppContainer } from "./AppContainer";
+import { AppContainer } from "../AppContainer/AppContainer";
 import styles from "./Footer.module.css";
-import { config } from "../config";
+import { config } from "../../config";
 
 const siteTitle = config.siteTitle;
 

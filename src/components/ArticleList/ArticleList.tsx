@@ -1,6 +1,5 @@
-import { ArticleHeader } from "../models";
-import { ArticleItem } from "./ArticleItem";
-import styles from "./ArticleList.module.css";
+import { ArticleHeader } from "../../models";
+import { ArticleItem } from "../ArticleItem/ArticleItem";
 
 type Props = { articles: ArticleHeader[] };
 

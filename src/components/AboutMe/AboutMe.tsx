@@ -1,10 +1,10 @@
 import styles from "./AboutMe.module.css";
-import { config } from "../config";
-import { TwitterSvg } from "./TwitterSvg";
-import { GitHubSvg } from "./GitHubSvg";
-import { ZennSvg } from "./ZennSvg";
+import { config } from "../../config";
+import { TwitterSvg } from "../Svg/TwitterSvg";
+import { GitHubSvg } from "../Svg/GitHubSvg";
+import { ZennSvg } from "../Svg/ZennSvg";
 import Link from "next/link";
-import { CatSvg } from "./CatSvg";
+import { CatSvg } from "../Svg/CatSvg";
 
 const social = config.social;
 

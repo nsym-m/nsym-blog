@@ -1,7 +1,7 @@
 import React from "react";
-import { ArticleHeader } from "../models";
-import ContentsLayout from "./ContentsLayout";
-import { ArticleList } from "./ArticleList";
+import { ArticleHeader } from "../../models";
+import ContentsLayout from "../ContentsLayout/ContentsLayout";
+import { ArticleList } from "../ArticleList/ArticleList";
 
 type Props = {
   articles: ArticleHeader[];

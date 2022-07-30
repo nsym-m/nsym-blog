@@ -2,11 +2,11 @@ import { getAllArticleIds, getArticleData } from '../../lib/articles'
 import { GetStaticProps } from "next";
 import Date from '../../components/Date'
 import SEO from '../../components/SEO'
-import ContentsLayout from '../../components/ContentsLayout'
+import ContentsLayout from '../../components/ContentsLayout/ContentsLayout'
 import utilStyles from '../../styles/utils.module.css'
 import { Article as IArticle, ArticleIds } from "../../models"
 import { config } from '../../config'
-import { TwitterCircle } from '../../components/TwitterSvg';
+import { TwitterCircle } from '../../components/Svg/TwitterSvg';
 
 type Props = { article: IArticle };
 

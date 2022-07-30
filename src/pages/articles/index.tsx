@@ -2,7 +2,7 @@ import React from 'react'
 import { GetStaticProps } from "next";
 import { getSortedArticlesData } from '../../lib/articles'
 import SEO from '../../components/SEO'
-import { ArticleRoot } from '../../components/ArticleRoot'
+import { ArticleRoot } from '../../components/ArticleRoot/ArticleRoot'
 import { ArticleHeader as IArticleHeader } from "../../models";
 
 type Props = {

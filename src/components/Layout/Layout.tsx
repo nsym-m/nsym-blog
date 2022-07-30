@@ -1,7 +1,7 @@
 import styles from "./Layout.module.css";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { AppContainer } from "./AppContainer";
+import { Header } from "../Header/Header";
+import { Footer } from "../Footer/Footer";
+import { AppContainer } from "../AppContainer/AppContainer";
 
 const Layout: React.FC = props => {
   return (

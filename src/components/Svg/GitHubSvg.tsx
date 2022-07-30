@@ -1,4 +1,4 @@
-import styles from "../styles/Svg.module.css";
+import styles from "../../styles/Svg.module.css";
 
 export const GitHubSvg: React.VFC = () => {
   return (

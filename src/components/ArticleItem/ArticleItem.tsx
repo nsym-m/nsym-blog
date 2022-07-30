@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArticleHeader } from "../models";
+import { ArticleHeader } from "../../models";
 import styles from "./ArticleItem.module.css";
-import Date from "./Date";
+import Date from "../Date";
 
 type Props = { article: ArticleHeader };
 
