@@ -19,6 +19,7 @@ const SEO: React.VFC<Props> = ({ title, description }) => {
       {description && <meta property="og:description" content={description} />}
       <meta property="og:site_name" content={siteTitle} />
       <meta property="twitter:card" content="summary" />
+      <meta property="twitter:image" content={`${config.siteUrl}/images/${config.avatar}`} />
       <meta property="twitter:creator" content={config.social.twitter} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:site" content={config.social.twitter} />
