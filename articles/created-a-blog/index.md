@@ -96,3 +96,9 @@ export async function getArticleData(id: string) {
 ブログを公開した次の目標は応用情報取得なので、これからは応用情報の勉強をしつつ、その内容をブログに書いていけたらと思っています。
 
 では。
+
+
+以下テスト
+
+<iframe width='100%' height='700px' style='border: 1px solid #e0e0e0;border-radius: 5px;' src='https://embed.judge-hub.com/est/iswcx/4f1cef86-bb22-43bd-ae9f-afd22478ce7a' title='Judge player' frameborder='0'></iframe>
+
