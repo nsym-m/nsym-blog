@@ -4,14 +4,15 @@
   position: fixed;
   top: 0;
   left: 0;
+  background-color: #898D90;
   z-index: -1;
 }
 
 .eyeCatch {
-  width: 100%;
   height: 45vh;
-  /* background-image: url("/images/headers/header.jpg");
-  background-repeat: no-repeat; */
+  align-items: center;
+  display: block;
+  margin: auto;
 }
 
 .eyeCatchWrapper {

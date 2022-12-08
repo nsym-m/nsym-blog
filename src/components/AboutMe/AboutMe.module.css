@@ -45,3 +45,8 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
+.qiitaIcon {
+  width: 24px;
+  height: 24px;
+}

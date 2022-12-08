@@ -8,7 +8,7 @@ export const Header: React.VFC = () => {
     <Link href="/">
       <a>
       <div className={`${styles.eyeCatchContainer}`}>
-          <img className={styles.eyeCatch} src={`/images/headers/${config.header}`} alt="" />
+          <img className={styles.eyeCatch} src={`/images/headers/${config.image.header}`} alt="" />
       </div>
       <div className={styles.eyeCatchWrapper}>
         <div className={styles.scrollDownContainer}>
