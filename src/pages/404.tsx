@@ -8,8 +8,8 @@ const Custom404: React.VFC = () => {
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
-          height: "10rem",
-          fontSize: "2rem",
+          height: "5rem",
+          fontSize: "1rem",
         }}>
         <p>404 Not Found</p>
         <p style={{ marginTop: "2rem" }}>このページは存在しません</p>
