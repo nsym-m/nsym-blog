@@ -6,7 +6,7 @@ import ContentsLayout from '../components/ContentsLayout/ContentsLayout';
 export default function Home(): JSX.Element {
   return (
     <>
-      <SEO title="TOP" description="にしやまの技術ブログ" />
+      <SEO title="プロフィール" description="にしやまの技術ブログ" />
       <ContentsLayout>
         <AboutMe />
       </ContentsLayout>

@@ -12,7 +12,7 @@ type Props = {
 export default function Home({ articles }: Props): JSX.Element {
   return (
     <>
-      <SEO title="TOP" description="にしやまの技術ブログ" />
+      <SEO title="記事" description="にしやまの技術ブログ" />
       <ArticleRoot articles={articles} />
     </>
   )
