@@ -1,7 +1,7 @@
 ---
 title: "「Go言語による並行処理」1~3章を読んだ感想"
 createdAt: "2022-12-15 02:00:00"
-updatedAt: ""
+updatedAt: "2022-12-15 02:25:00"
 ---
 
 
@@ -9,7 +9,7 @@ updatedAt: ""
 
 こんにちは。にしやまです。<br>
 この記事は[TechCommit AdventCalendar2022](https://adventar.org/calendars/7673)の15日目の記事です。<br>
-元々FlutterでOpenAPIを試してみるという内容で書くつもりでしたが、時間が取れずすぐに書けそうな読んでた本の感想に変えました。<br>
+元々FlutterでOpenAIを試してみるという内容で書くつもりでしたが、時間が取れずすぐに書けそうな読んでた本の感想に変えました。<br>
 
 ということで本題です。<br>
 今回は「[Go言語による並行処理](https://www.oreilly.co.jp/books/9784873118468/)」という本を読みました。<br>
