@@ -5,8 +5,7 @@ import styles from "./Header.module.css";
 
 export const Header: React.VFC = () => {
   return (
-    <Link href="/">
-      <a>
+    <div>
       <div className={`${styles.eyeCatchContainer}`}>
           <img className={styles.eyeCatch} src={`/images/headers/${config.image.header}`} alt="" />
       </div>
@@ -14,7 +13,6 @@ export const Header: React.VFC = () => {
         <div className={styles.scrollDownContainer}>
         </div>
       </div>
-    </a>
-    </Link>
+    </div>
   );
 };
