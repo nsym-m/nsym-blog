@@ -76,8 +76,13 @@
     text-decoration-color: initial;
 }
 
-/* .article br {
-  display: block;
-  content: "";
-  margin: 5px 0;
-} */
+.article pre {
+  font-size: 0.95rem;
+  line-height: 2.25rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

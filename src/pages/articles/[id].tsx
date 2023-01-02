@@ -7,6 +7,7 @@ import utilStyles from '../../styles/utils.module.css'
 import { Article as IArticle, ArticleIds } from "../../models"
 import { config } from '../../config'
 import { TwitterCircle } from '../../components/Svg/TwitterSvg';
+import Link from 'next/link';
 
 type Props = { article: IArticle };
 
@@ -27,9 +28,21 @@ export default function Article({ article }: Props): JSX.Element {
           </div>
           <div className={utilStyles.article} dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
         </article>
-        <a href={`${intent}?url=${config.siteUrl}/articles/${article.header.id}&title=${article.header.matterData.title}\n&via=${config.social.twitter}`} target="_blank" rel="noreferrer">
-          <TwitterCircle></TwitterCircle>
-        </a>
+        <div className={utilStyles.links}>
+          <a href={`${intent}?url=${config.siteUrl}/articles/${article.header.id}&title=${article.header.matterData.title}\n&via=${config.social.twitter}`} target="_blank" rel="noreferrer">
+            <TwitterCircle></TwitterCircle>
+          </a>
+          <Link href={'/articles/'}>
+            <a className={utilStyles.titleLink}>
+              記事一覧に戻る
+            </a>
+          </Link>
+          <Link href={'/'}>
+            <a className={utilStyles.titleLink}>
+              ホームに戻る
+            </a>
+          </Link>
+        </div>
       </ContentsLayout>
     </>
 
