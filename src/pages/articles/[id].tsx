@@ -63,9 +63,17 @@ export async function getStaticPaths(): Promise<{
 export const getStaticProps: GetStaticProps<Props, { id: string }> = async ({
   params,
 }) => {
-  if (!params) throw new Error("Component file name must has params.");
+  if (!params) {
+    throw new Error("Component file name must has params.");
+  }
 
   const article = await getArticleData(params.id);
+
+  if (!article.header.matterData.published) {
+    return {
+      notFound: true
+    };
+  }
   return {
     props: { article },
   };
