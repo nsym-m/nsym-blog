@@ -2,6 +2,7 @@
 title: "「言葉にできるは武器になる」を読んだ感想"
 createdAt: "2022-07-03 03:20:00"
 updatedAt: ""
+published: true
 ---
 
 

@@ -2,6 +2,7 @@
 title: "MySQLが勝手に落ちる"
 createdAt: "2021-07-25 20:06:00"
 updatedAt: "2021-08-22 01:01:00"
+published: true
 ---
 
 こんばんは。

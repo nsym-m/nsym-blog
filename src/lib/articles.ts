@@ -27,11 +27,16 @@ function getFrontMatter(
     throw new Error(`${id}: createdAt is required in front-matter`)
   }
 
+  if (matterData.published == undefined) {
+    throw new Error(`${id}: published is required in front-matter`)
+  }
+
   return {
     frontMatter: {
       ...matterData,
       title: matterData.title,
       createdAt: matterData.createdAt,
+      published: matterData.published,
     },
     content: matterResult.content,
   }
@@ -73,8 +78,13 @@ export async function getSortedArticlesData(): Promise<ArticleHeaders> {
       excerpt: await getArticleExcerpt(content),
     }
   })
+
+  // filtering published
+  const publishedArticles = (await Promise.all(allArticlesData)).filter(
+    (article) => article.matterData.published,
+  )
   // Sort articles by date
-  return (await Promise.all(allArticlesData)).sort((a, b) =>
+  return (await Promise.all(publishedArticles)).sort((a, b) =>
     a.matterData.createdAt < b.matterData.createdAt ? 1 : -1,
   )
 }

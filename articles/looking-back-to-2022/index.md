@@ -2,6 +2,7 @@
 title: "2022年を振り返る"
 createdAt: "2023-01-01 04:44:00"
 updatedAt: ""
+published: true
 ---
 
 # 初めに

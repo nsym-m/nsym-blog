@@ -2,6 +2,7 @@
 title: "Release notes 20220703"
 createdAt: "2022-07-03 05:45:00"
 updatedAt: ""
+published: true
 ---
 
 

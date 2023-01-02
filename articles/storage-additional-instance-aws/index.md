@@ -2,6 +2,7 @@
 title: "AWSインスタンスのストレージ変更とファイルシステムの拡張"
 createdAt: "2021-11-30 23:07:00"
 updatedAt: "2021-11-30 23:25:00"
+published: true
 ---
 
 

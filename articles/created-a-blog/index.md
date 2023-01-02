@@ -2,6 +2,7 @@
 title: "ブログを作りました"
 createdAt: "2021-07-24 19:25:00"
 updatedAt: ""
+published: true
 ---
 
 # 自己紹介

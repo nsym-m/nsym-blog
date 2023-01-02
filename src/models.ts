@@ -3,6 +3,7 @@ export type FrontMatter = {
   createdAt: string
   updatedAt?: string
   imageUrl?: string
+  published: boolean
 }
 
 export type ArticleHeader = {

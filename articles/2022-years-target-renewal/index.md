@@ -2,6 +2,7 @@
 title: "2022年の目標の刷新"
 createdAt: "2022-08-10 22:20:00"
 updatedAt: ""
+published: true
 ---
 
 こんばんは。<br>

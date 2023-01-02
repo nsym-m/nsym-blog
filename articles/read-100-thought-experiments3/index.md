@@ -2,6 +2,7 @@
 title: "「100の思考実験 好都合な銀行のエラー」を読んだ感想"
 createdAt: "2022-07-13 08:55:00"
 updatedAt: ""
+published: true
 ---
 
 ## はじめに
