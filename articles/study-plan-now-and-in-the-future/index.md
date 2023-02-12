@@ -1,7 +1,7 @@
 ---
 title: "今とこれからの勉強予定"
 createdAt: "2023-02-13 01:17:00"
-updatedAt: ""
+updatedAt: "2023-02-13 01:37:00"
 published: true
 ---
 
