@@ -10,7 +10,7 @@ export const AboutMe: React.VFC = () => {
   return (
     <div>
       <div className={styles.avatarDiv}>
-        <img className={styles.avatar} src={`/images/${config.image.avatar}`} alt="avatar" />
+        <img className={styles.avatar} src="/images/profile.jpg" alt="avatar" />
       </div>
       <div className={styles.wrapper}>
         <div className={styles.aboutme}>
