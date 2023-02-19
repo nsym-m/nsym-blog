@@ -39,6 +39,19 @@
   text-decoration: none;
 }
 
+.linkIcon:hover svg {
+  color: #3e3f48;
+}
+
+.list {
+	list-style: none;
+  padding-left: 2rem;
+}
+
+.listText {
+  padding-left: 1rem;
+}
+
 .social {
   margin-top: .3rem;
   display: flex;

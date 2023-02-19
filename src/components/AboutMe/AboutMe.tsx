@@ -23,25 +23,35 @@ export const AboutMe: React.VFC = () => {
               今は某社で漫画アプリのバックエンドエンジニアとして日々GoやPHPと戯れています。<br></br>
               漫画とアニメが好きです。
             </p>
-            <div className={styles.social}>
-              <a href={`https://twitter.com/${config.social.twitter}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
-                <TwitterSvg></TwitterSvg>
-              </a>
-              <a href={`https://github.com/${config.social.github}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
-                <GitHubSvg></GitHubSvg>
-              </a>
-              <a href={`https://zenn.dev/${config.social.zenn}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
-                <ZennSvg></ZennSvg>
-              </a>
-              <a href={`https://qiita.com/${config.social.qiita}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
-                <img className={styles.qiitaIcon} src={`/images/${config.image.qiita}`} />
-              </a>
-              <Link href="/articles">
-                <a className={styles.linkIcon}>
-                  <BlogSvg></BlogSvg>
+            <ul className={styles.list}>
+              <li>
+                <Link href="/articles">
+                  <a className={styles.linkIcon}>
+                    <BlogSvg></BlogSvg><span className={styles.listText}>Blog</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <a href={`https://twitter.com/${config.social.twitter}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
+                  <TwitterSvg></TwitterSvg><span className={styles.listText}>Twitter</span>
                 </a>
-              </Link>
-            </div>
+              </li>
+              <li>
+                <a href={`https://github.com/${config.social.github}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
+                  <GitHubSvg></GitHubSvg><span className={styles.listText}>GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a href={`https://zenn.dev/${config.social.zenn}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
+                  <ZennSvg></ZennSvg><span className={styles.listText}>Zenn</span>
+                </a>
+              </li>
+              <li>
+                <a href={`https://qiita.com/${config.social.qiita}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
+                  <img className={styles.qiitaIcon} src={`/images/${config.image.qiita}`} /><span className={styles.listText}>Qiita</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
