@@ -3,6 +3,12 @@
 }
 
 .contents {
-  width: 620px;
+  width: 700px;
   justify-self: center;
+}
+
+@media (max-width: 700px) {
+  .contents {
+    width: 600px;
+  }  
 }
