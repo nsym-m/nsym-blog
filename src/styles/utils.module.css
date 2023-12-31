@@ -73,6 +73,11 @@
   margin-bottom: 20px;
 }
 
+.article blockquote p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .article a {
   color: #54aae8;
   text-decoration: underline;

@@ -38,3 +38,10 @@ code {
   border-radius: 3px;
   line-height: 1.4;
 }
+
+blockquote {
+  margin: 1.4rem 0;
+  border-left: 3px solid #9dacb7;
+  padding: 0.5px 0 0.5px 0.7em;
+  color: #505c64;
+}
