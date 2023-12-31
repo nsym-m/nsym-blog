@@ -73,6 +73,10 @@
   margin-bottom: 20px;
 }
 
+.article p {
+  white-space: pre-wrap;
+}
+
 .article blockquote p {
   margin-top: 10px;
   margin-bottom: 10px;
