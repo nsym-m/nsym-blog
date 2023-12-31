@@ -4,5 +4,5 @@ nsym's blog
 
 ```
 ./init.sh {記事のディレクトリ名}
-yarn run dev
+npm run dev
 ```
