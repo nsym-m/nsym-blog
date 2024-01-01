@@ -11,75 +11,139 @@ published: true
 
 読みながらこのツイートのスレッドに感想やメモを書き込んでいたので、それを簡単にまとめる形にします。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">今日から大規模サービス技術入門を読む<br>1週間以内くらいでさくっと読みたい <a href="https://t.co/ykBPo6Fg5F">pic.twitter.com/ykBPo6Fg5F</a></p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1649054487724847105?ref_src=twsrc%5Etfw">April 20, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+[https://twitter.com/nsym__m/status/1649054487724847105](https://twitter.com/nsym__m/status/1649054487724847105)
 
 なお、インフラ構成の話などもありますが、この本の出版時(2010年)はまだクラウドが主流ではなかった（話題になってはいたがはてなはAmazon CloudFront以外は使用していなかった）のでその点だけ留意して読む方が良いです。
 
-書籍のリンクはこちらに。<br>
+書籍のリンクはこちらに。
 [https://gihyo.jp/book/2010/978-4-7741-4307-1](https://gihyo.jp/book/2010/978-4-7741-4307-1)
 
-章立ては下記の通りです。<br>
-第1回　大規模Webサービスの開発オリエンテーション―全体像を把握する<br>
-第2回　大規模データ処理入門 ―メモリとディスク，Webアプリケーションと負荷<br>
-第3回　OSのキャッシュと分散 ―大きなデータを効率良く扱うしくみ<br>
-第4回　DBのスケールアウト戦略 ―分散を考慮したMySQLの運用<br>
-第5回　大規模データ処理［実践］入門 ―アプリケーション開発の勘所<br>
-第6回　［課題］圧縮プログラミング ―データサイズ，I/O高速化との関係を意識する<br>
-第7回　アルゴリズムの実用化 ―身近な例で見る理論・研究の実践投入<br>
-第8回　［課題］はてなキーワードリンクの実装 ―応用への道筋を知る<br>
-第9回　全文検索技術に挑戦 ―大規模データ処理のノウハウ満載<br>
-第10回　［課題］全文検索エンジンの作成 ―基本部分，作り込み，速度と精度の追求<br>
-第11回　大規模データ処理を支えるサーバ/インフラ入門 ―Webサービスのバックエンド<br>
-第12回　スケーラビリティの確保に必要な考え方 ―規模の増大とシステムの拡張<br>
-第13回　冗長性の確保，システムの安定化 ―ほぼ100％の稼動率を実現するしくみ<br>
-第14回　効率向上作戦 ―ハードウェアのリソースの使用率を上げる<br>
-第15回　Webサービスとネットワーク ―ネットワークで見えてくるサービスの成長<br>
-特別編　いまどきのWebサービス構築に求められる実践技術 ―大規模サービスに対応するために<br>
+章立ては下記の通りです。
+第1回　大規模Webサービスの開発オリエンテーション―全体像を把握する
+第2回　大規模データ処理入門 ―メモリとディスク，Webアプリケーションと負荷
+第3回　OSのキャッシュと分散 ―大きなデータを効率良く扱うしくみ
+第4回　DBのスケールアウト戦略 ―分散を考慮したMySQLの運用
+第5回　大規模データ処理［実践］入門 ―アプリケーション開発の勘所
+第6回　［課題］圧縮プログラミング ―データサイズ，I/O高速化との関係を意識する
+第7回　アルゴリズムの実用化 ―身近な例で見る理論・研究の実践投入
+第8回　［課題］はてなキーワードリンクの実装 ―応用への道筋を知る
+第9回　全文検索技術に挑戦 ―大規模データ処理のノウハウ満載
+第10回　［課題］全文検索エンジンの作成 ―基本部分，作り込み，速度と精度の追求
+第11回　大規模データ処理を支えるサーバ/インフラ入門 ―Webサービスのバックエンド
+第12回　スケーラビリティの確保に必要な考え方 ―規模の増大とシステムの拡張
+第13回　冗長性の確保，システムの安定化 ―ほぼ100％の稼動率を実現するしくみ
+第14回　効率向上作戦 ―ハードウェアのリソースの使用率を上げる
+第15回　Webサービスとネットワーク ―ネットワークで見えてくるサービスの成長
+特別編　いまどきのWebサービス構築に求められる実践技術 ―大規模サービスに対応するために
 
 
 以降面白かったところをいくつか拾っていきます。
 
 第2回
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">大規模データの難しさはメモリ内で計算できないところ<br>・メモリ内で計算できないとディスクにあるデータを検索する必要がある<br>・ディスクは遅いのでI/Oに時間がかかる<br>　・メモリはディスク(HDD)の10の5乗から6乗以上高速</p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1649081124126351360?ref_src=twsrc%5Etfw">April 20, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> 大規模データの難しさはメモリ内で計算できないところ・メモリ内で計算できないとディスクにあるデータを検索する必要がある
+・ディスクは遅いのでI/Oに時間がかかる
+・メモリはディスク(HDD)の10の5乗から6乗以上高速
 
-第3回<br>
-Linuxはページキャッシュでファイルの情報をメモリにも保持するという話。<br>
+> I/Oバウンドなサーバに対してマルチコアCPUが搭載されていても、ディスクが1つだとCPU負荷は分散できてもI/O負荷は分散できない。
+平均するとI/O負荷はそれほど多くなく見えるが、CPUごとに見ると偏りが顕著に現れる。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Linuxのページキャッシュはディスクの内容を4KB程度のブロック(ページという)としてメモリに確保(LRU)し、解放せずずっと残しておく。VFSがこの機能を持っている。メモリより大きいサイズのファイルでも4KB程度のページ単位でキャッシュすることが可能。</p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1649445952372211713?ref_src=twsrc%5Etfw">April 21, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+[https://twitter.com/nsym__m/status/1649081124126351360](https://twitter.com/nsym__m/status/1649081124126351360)
 
-第4回<br>
+
+第3回
+Linuxはページキャッシュでファイルの情報をメモリにも保持するという話。
+
+> Linuxのページキャッシュはディスクの内容を4KB程度のブロック(ページという)としてメモリに確保(LRU)し、解放せずずっと残しておく。VFSがこの機能を持っている。メモリより大きいサイズのファイルでも4KB程度のページ単位でキャッシュすることが可能。
+
+> このキャッシュにはRadix Treeというデータ構造が使われていて、どんなにファイルが大きくても探索速度が落ちないようになっている。
+
+[https://twitter.com/nsym__m/status/1649445952372211713](https://twitter.com/nsym__m/status/1649445952372211713)
+
+
+第4回
 MySQLのB木インデックスはOSの挙動と同調させることでさらにチューニングさせることができるという話。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">OSはディスクからデータを読む際ブロック単位で読み出す。ここでディスクシークが発生する為遅い。<br>MySQLで使われるB木(B+木)indexはノードの子の数を任意に決められる。これをディスクのブロックと同じにするとノード内のデータはOSが1回でメモリに読むので、ディスクシークなしで探索できる。</p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1649476630656749569?ref_src=twsrc%5Etfw">April 21, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> OSはディスクからデータを読む際ブロック単位で読み出す。ここでディスクシークが発生する為遅い。
+MySQLで使われるB木(B+木)indexはノードの子の数を任意に決められる。これをディスクのブロックと同じにするとノード内のデータはOSが1回でメモリに読むので、ディスクシークなしで探索できる。
+
+> インデックスなし：B木を使わない線形探索でO(n)
+インデックス有り：B木の二分探索でO(log n)
+という計算量の違いがある上での上記のディスクシーク回数の効率化がある
+
+[https://twitter.com/nsym__m/status/1649476630656749569](https://twitter.com/nsym__m/status/1649476630656749569)
 
 
-第6回<br>
+第6回
 大規模データを扱う際のデータを圧縮して処理する手法。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">整数列の圧縮にはもう一工夫必要。<br>- 整数列を昇順ソート<br>- 先頭からの差分を取った整数列に変える<br> - 先頭から足していけば元の数値に戻せる形で小さい数字に変換できる<br>例:1,2,5,100,105,108,200,230<br>→ 1,1,3,95,5,3,92,30<br>- VBCodeで圧縮<br><br>これは脱帽レベルで賢い</p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1650563349011382272?ref_src=twsrc%5Etfw">April 24, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> Variable Byte Code(可変長バイト符号)による整数の圧縮（符号化）について
+固定長バイナリ符号だと5は4バイトなのをVBCodeだと1バイトに圧縮できる。小さい数ほど少ないバイトで表現できる。
 
-第7回<br>
+> 整数列の圧縮にはもう一工夫必要。
+> - 整数列を昇順ソート
+> - 先頭からの差分を取った整数列に変える
+>   - 先頭から足していけば元の数値に戻せる形で小さい数字に変換できる
+> 例:1,2,5,100,105,108,200,230 → 1,1,3,95,5,3,92,30
+> - VBCodeで圧縮
+> 
+> これは脱帽レベルで賢い
+
+> 頻出する記号に短い符号を与えてそうでない記号に長い符号を与える(=記号の出現確率の確率分布を考えて最適な符号を生成する)のが圧縮の根底にある理論。上記はこれを利用。
+モールス信号も同じ原理で頻出記号はﾂｰ,ﾄﾝとか短い符号でzとかはﾂｰﾂｰﾄﾝﾄﾝなど長い符号らしい
+
+[https://x.com/nsym__m/status/1650561146989199360](https://x.com/nsym__m/status/1650561146989199360)
+
+第7回
 正規表現で処理していたがデータ量が多くなり問題が発生したので別のデータ構造を使うようにした話。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">はてなダイアリーのキーワードリンクという機能の改善でTrie構造をさらに高速化させたAho-Corasick法(AC法)という手法が紹介されてるんだけど難しい...。<br><br>著者の書いたブログもあった<a href="https://t.co/rdDduqjWTj">https://t.co/rdDduqjWTj</a></p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1651942764085678080?ref_src=twsrc%5Etfw">April 28, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> はてなダイアリーのキーワードリンクという機能の改善でTrie構造をさらに高速化させたAho-Corasick法(AC法)という手法が紹介されてるんだけど難しい...。
+> 
+> 著者の書いたブログもあった
+> [Aho Corasick 法 - naoyaのはてなダイアリー](https://naoya-2.hatenadiary.org/entry/20090405/aho_corasick)
 
-余談<br>
+[https://twitter.com/nsym__m/status/1651942764085678080](https://twitter.com/nsym__m/status/1651942764085678080)
+
+余談
 ChatGPT4まじで便利すぎる
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">勉強しててわからないことがあったらChatGPTに聞くの良すぎてもう離れられない<br>教えてほしいところをピンポイントで聞けるのが最高に良い <a href="https://t.co/hlXUwt7rlc">pic.twitter.com/hlXUwt7rlc</a></p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1651950408351502337?ref_src=twsrc%5Etfw">April 28, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> 勉強しててわからないことがあったらChatGPTに聞くの良すぎてもう離れられない
+教えてほしいところをピンポイントで聞けるのが最高に良い
 
-第7回<br>
+![ChatGPT4にベイズ定理のことを聞いているスクショ](https://pbs.twimg.com/media/Fuzm8IEaIAAmM_w?format=jpg&name=small)
+
+[https://twitter.com/nsym__m/status/1651950408351502337](https://twitter.com/nsym__m/status/1651950408351502337)
+
+第7回
 AC法の仕組み
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">1. 今の自分の位置と同じ文字が登録されている場所を探す<br>2. それがあればそこから今の次の文字に続くか探す<br>3. 1,2でなければ根に戻り今の次の文字に続く場所を探す<br>4. 2,3で見つかればそれがfailureの値になる<br>5. 2,3で見つからなければfailureの値は0になる<br>完全に理解した<a href="https://t.co/juiK1EwxOT">https://t.co/juiK1EwxOT</a></p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1653109769484505089?ref_src=twsrc%5Etfw">May 1, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> 1. 今の自分の位置と同じ文字が登録されている場所を探す
+> 2. それがあればそこから今の次の文字に続くか探す
+> 3. 1,2でなければ根に戻り今の次の文字に続く場所を探す
+> 4. 2,3で見つかればそれがfailureの値になる
+> 5. 2,3で見つからなければfailureの値は0になる
+> 
+> 完全に理解した
+> [aho_corasick.ppt](https://www.dropbox.com/s/amhzbagxg5jurqx/aho_corasick.ppt?dl=0)
 
-第9回<br>
+[https://twitter.com/nsym__m/status/1653109769484505089](https://twitter.com/nsym__m/status/1653109769484505089)
+
+
+第9回
 全文検索エンジンの内部構造
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">検索エンジンの転置インデックスの内部構造はDictionaryとPositingsに分かれてる<br>Dictionaryは検索対象のドキュメントを単語(term)に区切った集合、Positingsはtermの位置情報の配列<br>ドキュメント→term化は下記でする<br>- 単語をtermとして扱う<br> - 辞書+AC法<br> - 形態素解析<br>- n-gramをtermとして扱う</p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1653688287616442371?ref_src=twsrc%5Etfw">May 3, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> 検索エンジンの転置インデックスの内部構造はDictionaryとPositingsに分かれてる
+Dictionaryは検索対象のドキュメントを単語(term)に区切った集合、Positingsはtermの位置情報の配列
+ドキュメント→term化は下記でする
+> - 単語をtermとして扱う
+>   - 辞書+AC法
+>   - 形態素解析
+> - n-gramをtermとして扱う
+
+[https://twitter.com/nsym__m/status/1653688287616442371](https://twitter.com/nsym__m/status/1653688287616442371)
 
 第11~15回, 特別編
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">読み終わった。11~15章と最後の特別編はそれまで開設した技術ではてながどういうインフラを組んでいるかの解説だった。</p>&mdash; にしやま (@nsym__m) <a href="https://twitter.com/nsym__m/status/1654173278485741574?ref_src=twsrc%5Etfw">May 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> 読み終わった。11~15章と最後の特別編はそれまで開設した技術ではてながどういうインフラを組んでいるかの解説だった。
+
+[https://twitter.com/nsym__m/status/1654173278485741574](https://twitter.com/nsym__m/status/1654173278485741574)
