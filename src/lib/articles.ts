@@ -96,8 +96,8 @@ export function getAllArticleIds(): ArticleIds {
       params: {
         id: fileName.replace(/\.md$/, ''),
       },
-    }
-  })
+    };
+  });
 }
 
 export async function getArticleData(id: string): Promise<Article> {

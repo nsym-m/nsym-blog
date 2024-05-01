@@ -8,10 +8,8 @@ import { HomeSvg } from "../Svg/HomeSvg";
 const Layout: React.FC = props => {
   return (
     <div className={styles.root}>
-    <Link href="/">
-      <a title="nsym.dev" className={styles.headerLogo}>
-        <HomeSvg></HomeSvg>
-      </a>
+    <Link href="/" title="nsym.dev" className={styles.headerLogo}>
+      <HomeSvg></HomeSvg>
     </Link>
       <Header />
       <div className={styles.mainContent}>

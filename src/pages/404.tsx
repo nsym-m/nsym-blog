@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Custom404: React.VFC = () => {
   return (
     <>
@@ -13,7 +15,7 @@ const Custom404: React.VFC = () => {
         }}>
         <p>404 Not Found</p>
         <p style={{ marginTop: "2rem" }}>このページは存在しません</p>
-        <a href="/"><span>←back to the HOME</span></a>
+        <Link href="/"><span>←back to the HOME</span></Link>
       </div>
     </>
   );

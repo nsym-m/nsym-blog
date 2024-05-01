@@ -13,6 +13,8 @@
   align-items: center;
   display: block;
   margin: auto;
+  width: auto;
+  height: auto;
 }
 
 .eyeCatchWrapper {

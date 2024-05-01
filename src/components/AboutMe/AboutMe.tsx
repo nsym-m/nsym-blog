@@ -5,12 +5,20 @@ import { GitHubSvg } from "../Svg/GitHubSvg";
 import { ZennSvg } from "../Svg/ZennSvg";
 import Link from "next/link";
 import { BlogSvg } from "../Svg/BlogSvg";
+import Image from "next/image"
 
 export const AboutMe: React.VFC = () => {
   return (
     <div>
       <div className={styles.avatarDiv}>
-        <img className={styles.avatar} src="/images/profile.jpg" alt="avatar" />
+        <Image
+          className={styles.avatar}
+          src="/images/profile.jpg"
+          alt="avatar"
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }}></Image>
       </div>
       <div className={styles.wrapper}>
         <div className={styles.aboutme}>
@@ -25,10 +33,8 @@ export const AboutMe: React.VFC = () => {
             </p>
             <ul className={styles.list}>
               <li>
-                <Link href="/articles">
-                  <a className={styles.linkIcon}>
-                    <BlogSvg></BlogSvg><span className={styles.listText}>Blog</span>
-                  </a>
+                <Link href="/articles" className={styles.linkIcon}>
+                  <BlogSvg></BlogSvg><span className={styles.listText}>Blog</span>
                 </Link>
               </li>
               <li>
@@ -48,7 +54,15 @@ export const AboutMe: React.VFC = () => {
               </li>
               <li>
                 <a href={`https://qiita.com/${config.social.qiita}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
-                  <img className={styles.qiitaIcon} src={`/images/${config.image.qiita}`} /><span className={styles.listText}>Qiita</span>
+                  <Image
+                    className={styles.qiitaIcon}
+                    src={`/images/${config.image.qiita}`}
+                    alt="qiitaリンク"
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }}></Image>
+                    <span className={styles.listText}>Qiita</span>
                 </a>
               </li>
             </ul>

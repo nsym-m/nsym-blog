@@ -9,17 +9,15 @@ export const ArticleItem: React.VFC<Props> = ({ article }) => {
 
   return (
     <div className={styles.root}>
-      <Link href={`/articles/${article.id}`}>
-        <a className={styles.titleLink}>
-          <div className={styles.info}>
-            <div className={styles.title}>
-              {article.matterData.title}
-            </div>
-            <div className={styles.metaInfo}>
-              <Date dateString={article.matterData.createdAt} className={styles.date} />
-            </div>
+      <Link href={`/articles/${article.id}`} className={styles.titleLink}>
+        <div className={styles.info}>
+          <div className={styles.title}>
+            {article.matterData.title}
           </div>
-        </a>
+          <div className={styles.metaInfo}>
+            <Date dateString={article.matterData.createdAt} className={styles.date} />
+          </div>
+        </div>
       </Link>
     </div>
   );
