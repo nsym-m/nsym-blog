@@ -5,7 +5,7 @@ import { GitHubSvg } from "../Svg/GitHubSvg";
 import { ZennSvg } from "../Svg/ZennSvg";
 import Link from "next/link";
 import { BlogSvg } from "../Svg/BlogSvg";
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 export const AboutMe: React.VFC = () => {
   return (

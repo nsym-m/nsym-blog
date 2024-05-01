@@ -1,6 +1,6 @@
 import { config } from "../../config";
 import styles from "./Header.module.css";
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 
 export const Header: React.VFC = () => {
