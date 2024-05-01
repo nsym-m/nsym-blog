@@ -2,6 +2,9 @@
 
 import type { FC } from "react";
 import { useTheme } from "next-themes";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import System from '@mui/icons-material/SystemUpdateAlt';
 
 interface ThemeToggleProps {
   className?: string;
@@ -18,7 +21,7 @@ export const ThemeToggle: FC<ThemeToggleProps> = (props) => {
         }}
         className="py-1 px-2 border-2 rounded-md"
       >
-        light
+        <LightModeIcon />
       </button>
       <button
         onClick={() => {
@@ -26,7 +29,7 @@ export const ThemeToggle: FC<ThemeToggleProps> = (props) => {
         }}
         className="py-1 px-2 border-2 rounded-md"
       >
-        dark
+        <DarkModeIcon />
       </button>
       <button
         onClick={() => {
@@ -34,7 +37,7 @@ export const ThemeToggle: FC<ThemeToggleProps> = (props) => {
         }}
         className="py-1 px-2 border-2 rounded-md"
       >
-        system
+        <System />
       </button>
     </div>
   );
