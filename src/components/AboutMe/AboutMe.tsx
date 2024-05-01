@@ -25,10 +25,8 @@ export const AboutMe: React.VFC = () => {
             </p>
             <ul className={styles.list}>
               <li>
-                <Link href="/articles">
-                  <a className={styles.linkIcon}>
-                    <BlogSvg></BlogSvg><span className={styles.listText}>Blog</span>
-                  </a>
+                <Link href="/articles" className={styles.linkIcon}>
+                  <BlogSvg></BlogSvg><span className={styles.listText}>Blog</span>
                 </Link>
               </li>
               <li>

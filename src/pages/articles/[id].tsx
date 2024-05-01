@@ -32,15 +32,11 @@ export default function Article({ article }: Props): JSX.Element {
           <a href={`${intent}?url=${config.siteUrl}/articles/${article.header.id}&title=${article.header.matterData.title}\n&via=${config.social.twitter}`} target="_blank" rel="noreferrer">
             <TwitterCircle></TwitterCircle>
           </a>
-          <Link href={'/articles/'}>
-            <a className={utilStyles.titleLink}>
-              記事一覧に戻る
-            </a>
+          <Link href={'/articles/'} className={utilStyles.titleLink}>
+            記事一覧に戻る
           </Link>
-          <Link href={'/'}>
-            <a className={utilStyles.titleLink}>
-              ホームに戻る
-            </a>
+          <Link href={'/'} className={utilStyles.titleLink}>
+            ホームに戻る
           </Link>
         </div>
       </ContentsLayout>
