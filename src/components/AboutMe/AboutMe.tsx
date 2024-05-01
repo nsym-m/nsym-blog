@@ -5,12 +5,13 @@ import { GitHubSvg } from "../Svg/GitHubSvg";
 import { ZennSvg } from "../Svg/ZennSvg";
 import Link from "next/link";
 import { BlogSvg } from "../Svg/BlogSvg";
+import Image from 'next/image'
 
 export const AboutMe: React.VFC = () => {
   return (
     <div>
       <div className={styles.avatarDiv}>
-        <img className={styles.avatar} src="/images/profile.jpg" alt="avatar" />
+        <Image className={styles.avatar} src="/images/profile.jpg" alt="avatar" ></Image>
       </div>
       <div className={styles.wrapper}>
         <div className={styles.aboutme}>
@@ -46,7 +47,7 @@ export const AboutMe: React.VFC = () => {
               </li>
               <li>
                 <a href={`https://qiita.com/${config.social.qiita}`} target="_blank" className={styles.linkIcon} rel="noreferrer">
-                  <img className={styles.qiitaIcon} src={`/images/${config.image.qiita}`} /><span className={styles.listText}>Qiita</span>
+                  <Image className={styles.qiitaIcon} src={`/images/${config.image.qiita}`} alt="qiitaリンク" ><span className={styles.listText}>Qiita</span></Image>
                 </a>
               </li>
             </ul>
