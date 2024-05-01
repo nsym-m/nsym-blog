@@ -15,6 +15,8 @@ export const AboutMe: React.VFC = () => {
           className={styles.avatar}
           src="/images/profile.jpg"
           alt="avatar"
+          width={200}
+          height={200}
           style={{
             maxWidth: "100%",
             height: "auto"
@@ -58,6 +60,8 @@ export const AboutMe: React.VFC = () => {
                     className={styles.qiitaIcon}
                     src={`/images/${config.image.qiita}`}
                     alt="qiitaリンク"
+                    width={30}
+                    height={30}
                     style={{
                       maxWidth: "100%",
                       height: "auto"
