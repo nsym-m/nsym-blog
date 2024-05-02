@@ -3,13 +3,13 @@ import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import { AppContainer } from "../AppContainer/AppContainer";
 import Link from "next/link";
-import { HomeSvg } from "../Svg/HomeSvg";
+import { Home } from "../Icons/Home";
 
 const Layout: React.FC = props => {
   return (
     <div className={styles.root}>
     <Link href="/" title="nsym.dev" className={styles.headerLogo}>
-      <HomeSvg></HomeSvg>
+      <Home></Home>
     </Link>
       <Header />
       <div className={styles.mainContent}>
