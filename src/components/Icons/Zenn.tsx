@@ -1,4 +1,4 @@
-import styles from "../../styles/Svg.module.css";
+import styles from "./Icon.module.css";
 
 export const Zenn: React.VFC = () => {
   return (

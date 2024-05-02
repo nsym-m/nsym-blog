@@ -4,6 +4,12 @@
   justify-content: center;
 }
 
+.themeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .linkIconSVG {
   width: 28px;
   height: 28px;

@@ -1,8 +1,8 @@
-import styles from "../../styles/Svg.module.css";
+import styles from "./Icon.module.css";
 
 const Sun: React.VFC = () => {
   return (
-    <span className={styles.linkIconSpan}>
+    <span className={styles.themeIcon}>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sun">
         <circle cx="12" cy="12" r="4"/>
         <path d="M12 2v2"/>
