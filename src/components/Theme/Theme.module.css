@@ -1,0 +1,41 @@
+.item {
+  padding-bottom: .50rem;
+  padding-top: .50rem;
+  display: flex;
+}
+
+.itemSpan {
+  margin-right: 10px;;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  width: 3.5rem;
+}
+
+.DropdownMenuItem[data-highlighted] {
+  background-color: #919191;
+}
+
+.group {
+  border-bottom-left-radius: .375rem;
+  border-bottom-right-radius: .375rem;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  border: 1px #504f4f solid;
+}
+
+.button {
+  margin-left: auto;
+  margin-bottom: 8px;
+  align-items: center;
+  border-radius: .375rem;
+  background-color: var(--background-color);
+  border: 0.1px #4f4e4e solid;
+	justify-content: flex-start;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.themeIcon {
+  padding-left: 8px;
+  display: flex;
+}

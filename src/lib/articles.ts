@@ -3,7 +3,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import strip from 'strip-markdown'
-import markdownToc from 'markdown-toc'
 import html from 'remark-html'
 import remarkShiki from '@stefanprobst/remark-shiki'
 import { FrontMatter, ArticleIds, Article, ArticleHeaders } from '../models'
@@ -93,14 +92,12 @@ export function getAllArticleIds(): ArticleIds {
   const fileNames = fs.readdirSync(articlesDirectory)
   return fileNames.map((fileName) => {
     return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
+      id: fileName.replace(/\.md$/, ''),
+    }
+  })
 }
 
-export async function getArticleData(id: string): Promise<Article> {
+export async function getArticle(id: string): Promise<Article> {
   // articles/{id}/index.md
   const fullPath = path.join(articlesDirectory, id, config.articleFileName)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -123,8 +120,6 @@ export async function getArticleData(id: string): Promise<Article> {
 
   const excerpt = await getArticleExcerpt(content)
 
-  const tocMdText = markdownToc(content).content
-
   // Combine the data with the id and contentHtml
   return {
     header: {
@@ -133,6 +128,5 @@ export async function getArticleData(id: string): Promise<Article> {
       excerpt,
     },
     bodyMdText: contentHtml,
-    tocMdText,
   }
 }
