@@ -1,9 +1,21 @@
-html,
+/* ダークモード */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --text-color: #fcfcfc;
+  --background-color: #212121;
+}
+
+/* ライトモード */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --text-color: #212121;
+  --background-color: #fcfcfc;
+}
+
 body {
-  padding: 0;
-  margin: 0;
+  color: var(--text-color);
+  background-color: var(--background-color);
   font-family: 'Roboto', 'YuGothic', 'Yu Gothic', '游ゴシック', '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Verdana', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-  color: #394045
 }
 
 a {
