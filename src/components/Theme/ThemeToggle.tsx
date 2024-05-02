@@ -27,7 +27,7 @@ const ThemeToggle = (): JSX.Element => {
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild className={styles.button}>
+      <DropdownMenu.Trigger asChild>
         <button
           aria-label="カラーテーマを選択する"
           className={styles.button}
@@ -41,15 +41,13 @@ const ThemeToggle = (): JSX.Element => {
         </button>
       </DropdownMenu.Trigger>
 
-      <DropdownMenu.Portal>
         <DropdownMenu.Content
           align="center"
-          className={styles.group}
         >
           <DropdownMenu.Group className={styles.group+` flex flex-col`}>
             {themes.map((item) => (
               <DropdownMenu.Item
-                className={styles.themeBox+` `+styles.DropdownMenuItem}
+                className={styles.item}
                 key={item}
                 onClick={() => {
                   setTheme(item)
@@ -70,14 +68,13 @@ const ThemeToggle = (): JSX.Element => {
                   ) : (
                     <Moon />
                   )}
-                  <span className={styles.themeMenu+` capitalize`}>{item}</span>
+                  <span className={styles.itemSpan}>{item}</span>
                   {item === theme && <Check></Check>}
                 </span>
               </DropdownMenu.Item>
             ))}
           </DropdownMenu.Group>
         </DropdownMenu.Content>
-      </DropdownMenu.Portal>
     </DropdownMenu.Root>
   )
 }

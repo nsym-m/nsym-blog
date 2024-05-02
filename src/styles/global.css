@@ -3,6 +3,9 @@
   color-scheme: dark;
   --text-color: #fcfcfc;
   --background-color: #212121;
+  --seconory-color: #aaa9a9;
+  --seconory-background: #4b4a4a;
+  --link-icon: #bbb9b9;
 }
 
 /* ライトモード */
@@ -10,6 +13,9 @@
   color-scheme: light;
   --text-color: #212121;
   --background-color: #fcfcfc;
+  --seconory-color: #535353;
+  --seconory-background: #d5d4d4;
+  --link-icon: #808080;
 }
 
 body {
@@ -38,16 +44,16 @@ pre {
 }
 
 pre code {
-  background-color: #212121;
-  color: #d8dee9ff;
+  background-color: var(--seconory-background);
+  color: var(--text-color);
 }
 
 code {
   display: inline-block;
-  background: #f0f5f9;
+  background: var(--seconory-background);
   padding: 0.04em 0.3em;
   margin: 0 0.2em;
-  border-radius: 3px;
+  border-radius: .100rem;
   line-height: 1.4;
 }
 
@@ -55,5 +61,7 @@ blockquote {
   margin: 1.4rem 0;
   border-left: 3px solid #9dacb7;
   padding: 0.5px 0 0.5px 0.7em;
-  color: #505c64;
+  color: var(--seconory-color);
+  border-top-right-radius: .50rem;
+  border-bottom-right-radius: .50rem;
 }

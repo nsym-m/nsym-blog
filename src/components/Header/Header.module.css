@@ -52,10 +52,8 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   margin-bottom: 1.5rem;
-  /* border-bottom-width: 1px;
-  border-color: #898D90; */
-  border-bottom: 0.1px #4f4e4e solid;
-  /* border: 1 solid #e5e7eb; */
+  align-items: center;
+  border-bottom: 1px #504f4f solid;
   display: flex;
   box-sizing: border-box;
 }
