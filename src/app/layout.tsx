@@ -1,7 +1,7 @@
+import '../styles/global.css'
 import { GA_TRACKING_ID } from "../lib/gtag";
 import { ReactNode } from 'react'
-import { ThemeProvider } from "next-themes";
-import { Header } from '../components/Header/Header';
+import ThemeProvider from '../components/Theme/ThemeProvider';
 
 export default function RootLayout({
   children,
@@ -10,9 +10,11 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="ja-JP" suppressHydrationWarning>
+      <head>
+        <meta name="color-scheme" content="light dark" />
+      </head>
       <body>
-      <Header />
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider>
           {children}
         </ThemeProvider>
       </body>

@@ -7,6 +7,7 @@ import { Article as IArticle, ArticleIds } from "../../../models"
 import { config } from '../../../config'
 import { TwitterCircle } from '../../../components/Icons/Twitter';
 import Link from 'next/link';
+import { Header } from '../../../components/Header/Header';
 
 const intent = 'https://twitter.com/intent/tweet/'
 
@@ -17,6 +18,7 @@ export default async function Article({ params }: { params: { id: string } }): P
   const article: IArticle = await getArticle(params.id);
   return (
     <>
+      <Header />
       <SEO title={article.header.matterData.title} description={article.header.excerpt} />
       <ContentsLayout >
         <article>

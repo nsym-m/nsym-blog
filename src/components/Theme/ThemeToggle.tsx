@@ -7,6 +7,7 @@ import { Check } from '../Icons/Check'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import styles from './Theme.module.css'
 
 const ThemeToggle = (): JSX.Element => {
   const [mounted, setMounted] = useState(false)
@@ -26,10 +27,10 @@ const ThemeToggle = (): JSX.Element => {
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
+      <DropdownMenu.Trigger asChild className={styles.button}>
         <button
           aria-label="カラーテーマを選択する"
-          className="rounded border p-2 text-gray-700 dark:border-gray-500 dark:text-slate-300"
+          className={styles.button}
           type="button"
         >
           {resolvedTheme === 'light' ? (
@@ -42,28 +43,36 @@ const ThemeToggle = (): JSX.Element => {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          align="end"
-          className="overflow-hidden rounded border bg-white shadow-sm dark:border-gray-500 dark:bg-gray-950"
-          sideOffset={8}
+          align="center"
+          className={styles.group}
         >
-          <DropdownMenu.Group className="flex flex-col">
+          <DropdownMenu.Group className={styles.group+` flex flex-col`}>
             {themes.map((item) => (
               <DropdownMenu.Item
-                className={`flex cursor-pointer items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-gray-800 ${
-                  item === theme ? 'bg-gray-100 dark:bg-gray-800' : ''
-                }`}
+                className={styles.themeBox+` `+styles.DropdownMenuItem}
                 key={item}
-                onClick={() => setTheme(item)}
+                onClick={() => {
+                  setTheme(item)
+                  let newTheme = item
+                  if (item === 'system') {
+                    const mql = window.matchMedia('(prefers-color-scheme: dark)')
+                    newTheme =  mql.matches ? 'dark' : 'light'
+                  }
+                  const root = window.document.documentElement
+                  root.setAttribute('data-theme', newTheme)
+                }}
               >
-                {item === 'light' ? (
-                  <Sun />
-                ) : item === 'system' ? (
-                  <Monitor />
-                ) : (
-                  <Moon />
-                )}
-                <span className="capitalize">{item}</span>
-                {item === theme && <Check></Check>}
+                <span className={styles.themeIcon}>
+                  {item === 'light' ? (
+                    <Sun />
+                  ) : item === 'system' ? (
+                    <Monitor />
+                  ) : (
+                    <Moon />
+                  )}
+                  <span className={styles.themeMenu+` capitalize`}>{item}</span>
+                  {item === theme && <Check></Check>}
+                </span>
               </DropdownMenu.Item>
             ))}
           </DropdownMenu.Group>
@@ -74,6 +83,3 @@ const ThemeToggle = (): JSX.Element => {
 }
 
 export default ThemeToggle
-
-
-

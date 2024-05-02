@@ -1,0 +1,44 @@
+.themeBox {
+  padding-bottom: .50rem;
+  padding-top: .50rem;
+  display: flex;
+}
+
+.themeMenu {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  width: 3.5rem;
+}
+
+.DropdownMenuItem[data-highlighted] {
+  border: 0px;
+  background-color: rgb(205, 78, 78);
+}
+
+
+.group {
+  border-width: 2px;
+  border-bottom-left-radius: .375rem;
+  border-bottom-right-radius: .375rem;
+  box-sizing: border-box;
+  -tw-bg-opacity: 1;
+  background-color: rgb(74, 74, 74);
+  border: 0.1px #4f4e4e solid;
+}
+
+.button {
+  /* border-width: 2px;
+  border-bottom-left-radius: .375rem;
+  border-bottom-right-radius: .375rem;
+  box-sizing: border-box;
+  -tw-bg-opacity: 1;
+  background-color: rgb(53, 49, 49); */
+  border-radius: .375rem;
+  background-color: rgba(74, 74, 74, 0.431);
+  border: 0.1px #4f4e4e solid;
+}
+
+.themeIcon {
+  padding-left: 8px;
+  display: flex;
+}
