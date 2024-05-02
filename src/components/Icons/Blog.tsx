@@ -1,6 +1,6 @@
-import styles from "../../styles/Svg.module.css";
+import styles from "./Icon.module.css";
 
-export const BlogSvg: React.VFC = () => {
+export const Blog: React.VFC = () => {
   return (
     <span className={styles.linkIconSpan}>
       <svg className={styles.linkIconSVG} version="1.1" id="_x32_" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" >
