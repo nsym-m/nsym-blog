@@ -1,11 +1,13 @@
 import { config } from "../../config";
 import styles from "./Header.module.css";
 import Image from "next/image"
+import ThemeToggle from "../Theme/ThemeToggle";
 
 export const Header: React.VFC = () => {
   return (
     <div>
-      <div className={`${styles.eyeCatchContainer}`}>
+      <ThemeToggle />
+      {/* <div className={`${styles.eyeCatchContainer}`}>
           <Image
             className={styles.eyeCatch}
             src={`/images/headers/${config.image.header}`}
@@ -18,7 +20,7 @@ export const Header: React.VFC = () => {
       <div className={styles.eyeCatchWrapper}>
         <div className={styles.scrollDownContainer}>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

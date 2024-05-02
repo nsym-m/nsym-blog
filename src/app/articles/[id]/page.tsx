@@ -5,7 +5,7 @@ import ContentsLayout from '../../../components/ContentsLayout/ContentsLayout'
 import utilStyles from '../../../styles/utils.module.css'
 import { Article as IArticle, ArticleIds } from "../../../models"
 import { config } from '../../../config'
-import { TwitterCircle } from '../../../components/Svg/TwitterSvg';
+import { TwitterCircle } from '../../../components/Icons/Twitter';
 import Link from 'next/link';
 
 const intent = 'https://twitter.com/intent/tweet/'
