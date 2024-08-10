@@ -3,12 +3,14 @@
 }
 
 .contents {
-  width: 700px;
   justify-self: center;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
 @media (max-width: 700px) {
   .contents {
-    width: 600px;
+    margin-left: 0;
+    margin-right: 0;
   }  
 }
