@@ -9,7 +9,6 @@
 .aboutme {
   display: flex;
   align-items: center;
-  padding: 1.6rem 0.8rem;
   margin: auto;
 }
 
@@ -20,10 +19,6 @@
 
 .avatarDiv {
   text-align: center;
-}
-
-.biography {
-  margin-left: 1.6rem;
 }
 
 .biography > p {
