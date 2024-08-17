@@ -4,14 +4,21 @@
 
 .contents {
   justify-self: center;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  max-width: 750px;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+@media (min-width: 700px) {
+  .contents {
+    max-width: 750px;
+  }
 }
 
 @media (max-width: 700px) {
   .contents {
-    margin-left: 0;
-    margin-right: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
