@@ -4,7 +4,7 @@
   --text-color: #fcfcfc;
   --background-color: #212121;
   --seconory-color: #aaa9a9;
-  --seconory-background: #4b4a4a;
+  --seconory-background: #444343;
   --link-icon: #bbb9b9;
 }
 
@@ -59,8 +59,7 @@ pre code {
 
 code {
   display: inline-block;
-  background: #bbb9b9;
-  color: #0d1117;
+  background: var(--seconory-background);
   padding: 0.15em 0.3em 0.15em 0.3em;
   margin: 0 0.2em;
   border-radius: 6px;
