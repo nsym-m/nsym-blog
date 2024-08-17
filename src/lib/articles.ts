@@ -1,10 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import remark from 'remark'
+import { remark } from 'remark'
 import strip from 'strip-markdown'
-import html from 'remark-html'
-import remarkShiki from '@stefanprobst/remark-shiki'
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remark2rehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
+import rehypePrettyCode from 'rehype-pretty-code'
 import { FrontMatter, ArticleIds, Article, ArticleHeaders } from '../models'
 import { config } from '../config'
 
@@ -42,9 +45,9 @@ function getFrontMatter(
 }
 
 async function getArticleExcerpt(mdText: string): Promise<string> {
-  const processed = await remark().use(strip).process(mdText)
-
-  const contentText = processed.toString()
+  const contentText = (
+    await remark().use(remarkParse).use(strip).process(mdText)
+  ).toString()
 
   const excerpt = contentText
     .trim()
@@ -111,12 +114,17 @@ export async function getArticle(id: string): Promise<Article> {
       'utf-8',
     ),
   )
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(remarkShiki, { theme: theme })
-    .use(html)
-    .process(content)
-  const contentHtml = processedContent.toString()
+
+  const contentHtml = (
+    await unified()
+      .use(remarkParse)
+      .use(remark2rehype)
+      .use(rehypePrettyCode, {
+        theme: theme,
+      })
+      .use(rehypeStringify)
+      .process(content)
+  ).toString()
 
   const excerpt = await getArticleExcerpt(content)
 
