@@ -8,7 +8,7 @@ export const config = {
     qiita: 'nsym__m',
   },
   image: {
-    avatar: 'profile.jpg',
+    avatar: '60309119.jpeg',
     header: 'header.jpg',
     qiita: 'qiita.png',
   },
