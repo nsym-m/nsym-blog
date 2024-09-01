@@ -27,11 +27,11 @@ export const AboutMe: React.VFC = () => {
           <div className={styles.biography}>
             <p>にしやま</p>
             <p>
-              犬と猫を飼ってるソフトウェアエンジニア<br></br>
-              業務でGo/PHP/JavaScript/TypeScript、趣味でFlutter/Swiftなどを触ります。<br></br>
-              以前は受託開発の会社でPHPとJavaScriptをメインに扱っていました。<br></br>
-              今は某社で漫画アプリのバックエンドエンジニアとして日々GoやPHPと戯れています。<br></br>
-              漫画とアニメが好きです。
+              こんにちは。プログラマーをやっている者です。<br></br>
+              仕事では漫画アプリのバックエンドエンジニアとして日々Goと戯れています。趣味では気になる技術を触ってみたり技術書を読み漁ったりしています。<br></br>
+              以前はJavaScript/TypeScript(Vue/Nuxt)やPHPを触ってましたが最近はあまり触っていません。<br></br>
+              このブログはNext.js(App Router)のSSGで出来てます。ソースコードは<a target="_blank" href={`https://github.com/${config.social.github}/nsym-blog`} rel="noreferrer" style={{color: "#54aae8"}}>こちら</a>です、まぁ大したコードではないですがご興味があれば。<br></br>
+              犬と猫を飼ってます。漫画とアニメが好きです。
             </p>
             <ul className={styles.list}>
               <li>

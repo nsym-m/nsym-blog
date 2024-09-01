@@ -39,10 +39,6 @@ img {
   max-width: 90vw
 }
 
-* {
-  box-sizing: border-box;
-}
-
 pre {
   padding: 0.3em;
   border-radius: 8px;
