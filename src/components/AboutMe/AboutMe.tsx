@@ -27,7 +27,7 @@ export const AboutMe: React.VFC = () => {
           <div className={styles.biography}>
             <p>にしやま</p>
             <p>
-              6年目のバックエンドのプログラマーです。<br></br>
+              7年目のバックエンドのプログラマーです。<br></br>
               最近はGoばっか書いてます。まだまだ修行中。<br></br>
               犬と猫を飼ってます。漫画とアニメが好きです。
             </p>
