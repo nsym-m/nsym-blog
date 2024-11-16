@@ -27,9 +27,8 @@ export const AboutMe: React.VFC = () => {
           <div className={styles.biography}>
             <p>にしやま</p>
             <p>
-              こんにちは。プログラマーをやっている者です。<br></br>
-              仕事では漫画アプリのバックエンドエンジニアとして日々Goと戯れています。趣味では気になる技術を触ってみたり技術書を読み漁ったりしています。<br></br>
-              このブログはNext.js(App Router)のSSGで出来てます。ソースコードは<a target="_blank" href={`https://github.com/${config.social.github}/nsym-blog`} rel="noreferrer" style={{color: "#54aae8"}}>こちら</a>です、まぁ大したコードではないですがご興味があれば。<br></br>
+              6年目のバックエンドのプログラマーです。<br></br>
+              最近はGoばっか書いてます。まだまだ修行中。<br></br>
               犬と猫を飼ってます。漫画とアニメが好きです。
             </p>
             <ul className={styles.list}>
