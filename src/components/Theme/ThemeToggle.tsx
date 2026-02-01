@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import Monitor from '../Icons/Monitor'
 import Sun from '../Icons/Sun'
 import Moon from '../Icons/Moon'
@@ -9,7 +10,7 @@ import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import styles from './Theme.module.css'
 
-const ThemeToggle = (): JSX.Element => {
+const ThemeToggle = (): React.JSX.Element => {
   const [mounted, setMounted] = useState(false)
   const { theme, resolvedTheme, themes, setTheme } = useTheme()
 
@@ -41,40 +42,40 @@ const ThemeToggle = (): JSX.Element => {
         </button>
       </DropdownMenu.Trigger>
 
-        <DropdownMenu.Content
-          align="center"
-        >
-          <DropdownMenu.Group className={styles.group+` flex flex-col`}>
-            {themes.map((item) => (
-              <DropdownMenu.Item
-                className={styles.item}
-                key={item}
-                onClick={() => {
-                  setTheme(item)
-                  let newTheme = item
-                  if (item === 'system') {
-                    const mql = window.matchMedia('(prefers-color-scheme: dark)')
-                    newTheme =  mql.matches ? 'dark' : 'light'
-                  }
-                  const root = window.document.documentElement
-                  root.setAttribute('data-theme', newTheme)
-                }}
-              >
-                <span className={styles.themeIcon}>
-                  {item === 'light' ? (
-                    <Sun />
-                  ) : item === 'system' ? (
-                    <Monitor />
-                  ) : (
-                    <Moon />
-                  )}
-                  <span className={styles.itemSpan}>{item}</span>
-                  {item === theme && <Check></Check>}
-                </span>
-              </DropdownMenu.Item>
-            ))}
-          </DropdownMenu.Group>
-        </DropdownMenu.Content>
+      <DropdownMenu.Content
+        align="center"
+      >
+        <DropdownMenu.Group className={styles.group + ` flex flex-col`}>
+          {themes.map((item) => (
+            <DropdownMenu.Item
+              className={styles.item}
+              key={item}
+              onClick={() => {
+                setTheme(item)
+                let newTheme = item
+                if (item === 'system') {
+                  const mql = window.matchMedia('(prefers-color-scheme: dark)')
+                  newTheme = mql.matches ? 'dark' : 'light'
+                }
+                const root = window.document.documentElement
+                root.setAttribute('data-theme', newTheme)
+              }}
+            >
+              <span className={styles.themeIcon}>
+                {item === 'light' ? (
+                  <Sun />
+                ) : item === 'system' ? (
+                  <Monitor />
+                ) : (
+                  <Moon />
+                )}
+                <span className={styles.itemSpan}>{item}</span>
+                {item === theme && <Check></Check>}
+              </span>
+            </DropdownMenu.Item>
+          ))}
+        </DropdownMenu.Group>
+      </DropdownMenu.Content>
     </DropdownMenu.Root>
   )
 }

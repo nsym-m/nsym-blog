@@ -5,7 +5,7 @@ import { config } from "../../config";
 
 const siteTitle = config.siteTitle;
 
-export const Footer: React.VFC = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <AppContainer>

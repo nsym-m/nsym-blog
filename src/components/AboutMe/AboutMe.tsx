@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Blog } from "../Icons/Blog";
 import Image from "next/image"
 
-export const AboutMe: React.VFC = () => {
+export const AboutMe: React.FC = () => {
   return (
     <div>
       <div className={styles.avatarDiv}>

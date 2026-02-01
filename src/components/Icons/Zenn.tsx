@@ -1,6 +1,6 @@
 import styles from "./Icon.module.css";
 
-export const Zenn: React.VFC = () => {
+export const Zenn: React.FC = () => {
   return (
     <span className={styles.linkIconSpan}>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 88.3 88.3" className={styles.linkIconSVG}>

@@ -5,7 +5,7 @@ import Date from "../Date";
 
 type Props = { article: ArticleHeader };
 
-export const ArticleItem: React.VFC<Props> = ({ article }) => {
+export const ArticleItem: React.FC<Props> = ({ article }) => {
 
   return (
     <div className={styles.root}>

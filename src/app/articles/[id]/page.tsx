@@ -13,9 +13,9 @@ const intent = 'https://twitter.com/intent/tweet/'
 
 export const dynamicParams = false
 
-export default async function Article({ params }: { params: { id: string } }): Promise<JSX.Element> {
-
-  const article: IArticle = await getArticle(params.id);
+export default async function Article({ params }: { params: Promise<{ id: string }> }): Promise<React.JSX.Element> {
+  const { id } = await params;
+  const article: IArticle = await getArticle(id);
   return (
     <>
       <Header />
@@ -26,7 +26,7 @@ export default async function Article({ params }: { params: { id: string } }): P
           <div className={utilStyles.lightText}>
             <span className={utilStyles.mgr10}>公開日時：<Date dateString={article.header.matterData.createdAt} /></span>
             {article.header.matterData.updatedAt && (
-              <span className={utilStyles.mgr10}>更新日時：<Date dateString={article.header.matterData.updatedAt??''} /></span>
+              <span className={utilStyles.mgr10}>更新日時：<Date dateString={article.header.matterData.updatedAt ?? ''} /></span>
             )}
           </div>
           <div className={utilStyles.article} dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
@@ -48,7 +48,7 @@ export default async function Article({ params }: { params: { id: string } }): P
   )
 }
 
-export async function generateStaticParams(): Promise<ArticleIds>{
+export async function generateStaticParams(): Promise<ArticleIds> {
   return getAllArticleIds().map((article) => ({
     id: article.id
   }))
