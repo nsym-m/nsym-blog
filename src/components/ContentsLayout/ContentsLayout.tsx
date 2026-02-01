@@ -1,9 +1,9 @@
 'use client'
 
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import styles from "./ContentsLayout.module.css";
 
-type Props = { sidemenu?: React.ReactNode };
+type Props = PropsWithChildren<{ sidemenu?: React.ReactNode }>;
 
 const ContentsLayout: React.FC<Props> = props => {
 

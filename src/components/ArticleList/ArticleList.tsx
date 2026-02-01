@@ -3,7 +3,7 @@ import { ArticleItem } from "../ArticleItem/ArticleItem";
 
 type Props = { articles: ArticleHeader[] };
 
-export const ArticleList: React.VFC<Props> = props => {
+export const ArticleList: React.FC<Props> = props => {
   return (
     <div>
       {props.articles.map(article => (

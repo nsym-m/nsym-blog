@@ -1,12 +1,13 @@
+import React, { PropsWithChildren } from "react";
 import styles from "./Layout.module.css";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import { AppContainer } from "../AppContainer/AppContainer";
 
-const Layout: React.FC = props => {
+const Layout: React.FC<PropsWithChildren> = props => {
   return (
     <div className={styles.root}>
-    
+
       <Header />
       <div className={styles.mainContent}>
         <div className={styles.main}>

@@ -1,6 +1,6 @@
 import styles from "./Icon.module.css";
 
-export const Twitter: React.VFC = () => {
+export const Twitter: React.FC = () => {
   return (
     <span className={styles.linkIconSpan}>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 26 24" className={styles.linkIconSVG}>
@@ -10,7 +10,7 @@ export const Twitter: React.VFC = () => {
   )
 }
 
-export const TwitterCircle: React.VFC = () => {
+export const TwitterCircle: React.FC = () => {
   return (
     <span className={styles.linkIconSpan}>
       <svg viewBox="0 0 64 64" width="46" height="40" className={styles.linkIconSVG}>

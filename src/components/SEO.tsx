@@ -6,7 +6,7 @@ type Props = {
   description?: string;
 };
 
-const SEO: React.VFC<Props> = ({ title, description }) => {
+const SEO: React.FC<Props> = ({ title, description }) => {
   const siteTitle = config.siteTitle;
 
   return (

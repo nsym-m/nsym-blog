@@ -1,6 +1,6 @@
 import styles from "./Icon.module.css";
 
-export const GitHub: React.VFC = () => {
+export const GitHub: React.FC = () => {
   return (
     <span className={styles.linkIconSpan}>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 26 24" className={styles.linkIconSVG}>

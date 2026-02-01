@@ -3,7 +3,7 @@ import ThemeToggle from "../Theme/ThemeToggle";
 import Link from "next/link";
 import { Home } from "../Icons/Home";
 
-export const Header: React.VFC = () => {
+export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <Link href="/" title="nsym.dev">
