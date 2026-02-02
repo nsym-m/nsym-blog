@@ -62,6 +62,20 @@
   margin-bottom: 50px;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  word-break: break-word;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.article * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article pre {
+  overflow-x: auto;
 }
 
 @media (max-width: 700px) {
