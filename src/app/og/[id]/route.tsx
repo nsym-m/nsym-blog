@@ -14,6 +14,11 @@ const OG_HEIGHT = 630
 const fontPath = path.join(process.cwd(), 'public/fonts/NotoSansJP-Regular.ttf')
 const fontData = fs.readFileSync(fontPath)
 
+// アバター画像を読み込み
+const avatarPath = path.join(process.cwd(), `public/images/${config.image.avatar}`)
+const avatarData = fs.readFileSync(avatarPath)
+const avatarBase64 = `data:image/jpeg;base64,${avatarData.toString('base64')}`
+
 export async function GET(
   _request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -94,20 +99,15 @@ export async function GET(
                 gap: '16px',
               }}
             >
-              {/* サイトアイコン（シンプルな丸） */}
-              <div
+              {/* サイトアイコン */}
+              <img
+                src={avatarBase64}
+                width={48}
+                height={48}
                 style={{
-                  width: '48px',
-                  height: '48px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                 }}
-              >
-                <span style={{ color: '#ffffff', fontSize: '24px', fontWeight: 700 }}>N</span>
-              </div>
+              />
               <span
                 style={{
                   fontSize: '28px',
