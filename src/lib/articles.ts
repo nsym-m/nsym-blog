@@ -8,7 +8,8 @@ import remarkParse from 'remark-parse'
 import remark2rehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import rehypePrettyCode from 'rehype-pretty-code'
-import { FrontMatter, ArticleIds, Article, ArticleHeaders } from '../models'
+import rehypeSlug from 'rehype-slug'
+import { FrontMatter, ArticleIds, Article, ArticleHeaders, TocItem } from '../models'
 import { config } from '../config'
 
 const articlesDirectory = path.join(process.cwd(), 'articles')
@@ -59,6 +60,38 @@ async function getArticleExcerpt(mdText: string): Promise<string> {
   }
 
   return excerpt
+}
+
+function extractTocFromMarkdown(mdText: string): TocItem[] {
+  const toc: TocItem[] = []
+  const lines = mdText.split('\n')
+
+  for (const line of lines) {
+    // h2 と h3 の見出しを抽出
+    const h2Match = line.match(/^## (.+)$/)
+    const h3Match = line.match(/^### (.+)$/)
+
+    if (h2Match) {
+      const text = h2Match[1].trim()
+      const id = generateSlug(text)
+      toc.push({ id, text, level: 2 })
+    } else if (h3Match) {
+      const text = h3Match[1].trim()
+      const id = generateSlug(text)
+      toc.push({ id, text, level: 3 })
+    }
+  }
+
+  return toc
+}
+
+function generateSlug(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\u3040-\u309f\u30a0-\u30ff\u4e00-\u9faf\s-]/g, '') // 英数字、日本語、スペース、ハイフンのみ残す
+    .replace(/\s+/g, '-') // スペースをハイフンに
+    .replace(/-+/g, '-') // 連続ハイフンを1つに
+    .replace(/^-|-$/g, '') // 先頭と末尾のハイフンを削除
 }
 
 export async function getSortedArticlesData(): Promise<ArticleHeaders> {
@@ -119,6 +152,7 @@ export async function getArticle(id: string): Promise<Article> {
     await unified()
       .use(remarkParse)
       .use(remark2rehype)
+      .use(rehypeSlug) // 見出しに id を自動付与
       .use(rehypePrettyCode, {
         theme: theme,
       })
@@ -127,6 +161,7 @@ export async function getArticle(id: string): Promise<Article> {
   ).toString()
 
   const excerpt = await getArticleExcerpt(content)
+  const toc = extractTocFromMarkdown(content)
 
   // Combine the data with the id and contentHtml
   return {
@@ -136,5 +171,6 @@ export async function getArticle(id: string): Promise<Article> {
       excerpt,
     },
     bodyMdText: contentHtml,
+    toc,
   }
 }

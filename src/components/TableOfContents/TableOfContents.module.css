@@ -1,0 +1,180 @@
+/* デスクトップ用目次 */
+.toc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--seconory-color);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  display: block;
+  padding: 0.4rem 0;
+  padding-left: 0.75rem;
+  color: var(--seconory-color);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  word-break: break-word;
+}
+
+.link:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* h3 レベルのインデント */
+.level3 .link {
+  padding-left: 1.5rem;
+  font-size: 0.8rem;
+}
+
+/* アクティブ状態 */
+.active .link {
+  color: #54aae8;
+  border-left-color: #54aae8;
+  font-weight: 500;
+}
+
+/* モバイル用フローティング目次 */
+.mobileContainer {
+  display: none;
+}
+
+/* モバイルレスポンシブ */
+@media (max-width: 1024px) {
+  /* デスクトップ用目次を非表示 */
+  .toc {
+    display: none;
+  }
+
+  /* モバイル用フローティング目次を表示 */
+  .mobileContainer {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  /* フローティングボタン */
+  .floatingButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--seconory-background);
+    border: 1px solid var(--seconory-color);
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .floatingButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .tocIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* 展開時はボタンを非表示 */
+  .mobileExpanded .floatingButton {
+    display: none;
+  }
+
+  /* モバイル目次パネル */
+  .mobilePanel {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: calc(100vw - 40px);
+    max-width: 320px;
+    max-height: 60vh;
+    background: var(--seconory-background);
+    border: 1px solid var(--seconory-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  .mobileExpanded .mobilePanel {
+    display: block;
+  }
+
+  .mobilePanelHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--seconory-color);
+  }
+
+  .mobilePanelTitle {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    color: var(--seconory-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    line-height: 1;
+    transition: color 0.2s ease;
+  }
+
+  .closeButton:hover {
+    color: var(--text-color);
+  }
+
+  .mobileList {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    max-height: calc(60vh - 50px);
+    overflow-y: auto;
+  }
+
+  .mobileList .link {
+    padding: 0.6rem 1rem;
+    padding-left: 1rem;
+    border-left: none;
+  }
+
+  .mobileList .level3 .link {
+    padding-left: 1.75rem;
+  }
+
+  .mobileList .active .link {
+    background: rgba(84, 170, 232, 0.1);
+    border-left: none;
+  }
+}
+

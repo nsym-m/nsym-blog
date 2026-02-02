@@ -18,12 +18,14 @@
   --link-icon: #808080;
 }
 
-html, body {
+html {
   overflow-x: hidden;
   max-width: 100vw;
 }
 
 body {
+  max-width: 100vw;
+  overflow-x: hidden;
   color: var(--text-color);
   background-color: var(--background-color);
   font-family: 'Roboto', 'YuGothic', 'Yu Gothic', '游ゴシック', '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Verdana', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
@@ -40,21 +42,26 @@ a:hover {
 }
 
 img {
-  max-width: 90vw
+  max-width: 100%;
+  height: auto;
 }
 
 /* rehype-pretty-code のコードブロック用スタイル */
 figure[data-rehype-pretty-code-figure] {
   margin: 0;
+  width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  box-sizing: border-box;
 }
 
 pre {
   padding: 0.3em;
   border-radius: 8px;
   overflow-x: auto;
+  width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 pre code {
@@ -64,7 +71,10 @@ pre code {
   padding: 1em 0.5em 1em 0.5em;
   display: block;
   white-space: pre;
-  overflow-x: visible;
+  overflow-x: auto;
+  box-sizing: border-box;
+  width: max-content;
+  min-width: 100%;
 }
 
 code {

@@ -1,5 +1,31 @@
+/* ラッパー */
+.wrapper {
+  width: 100%;
+}
+
+/* 記事ページ用ラッパー（ヘッダーがある場合） */
+.wrapperArticle {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ヘッダー部分（タイトル・日付） */
+.header {
+  max-width: 750px;
+  margin: 0 auto 1.5rem auto;
+}
+
 .layout {
   display: grid;
+  justify-content: center;
+}
+
+/* 2カラムレイアウト（サイドバーあり） */
+.withSidebar {
+  grid-template-columns: minmax(0, 750px) 250px;
+  gap: 2rem;
+  align-items: start;
 }
 
 .contents {
@@ -12,13 +38,99 @@
   overflow-x: hidden;
 }
 
+/* 記事ラッパー内のコンテンツ幅を調整 */
+.wrapperArticle .contents {
+  justify-self: center;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 750px;
+}
+
+/* サイドバーありの場合はコンテンツ幅を調整 */
+.wrapperArticle .withSidebar .contents {
+  justify-self: start;
+  max-width: 100%;
+}
+
 .narrow {
   max-width: 750px;
+}
+
+/* サイドバー */
+.sidebar {
+  display: block;
+  align-self: start;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.sidebarSticky {
+  /* sticky は親要素 .sidebar で適用 */
+}
+
+/* スクロールバーを目立たなく */
+.sidebarSticky::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebarSticky::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebarSticky::-webkit-scrollbar-thumb {
+  background: var(--seconory-color);
+  border-radius: 4px;
+}
+
+/* タブレット・モバイル */
+@media (max-width: 1024px) {
+  .wrapperArticle {
+    padding: 0 1rem;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .header {
+    max-width: 100%;
+  }
+
+  .layout {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .withSidebar {
+    grid-template-columns: 1fr;
+  }
+
+  /* モバイルではコンテンツを中央寄せに戻す */
+  .contents,
+  .wrapperArticle .contents,
+  .wrapperArticle .withSidebar .contents {
+    justify-self: stretch;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* モバイルではサイドバーを非表示（フローティング目次は Portal で body 直下に表示） */
+  .sidebar {
+    display: none;
+  }
 }
 
 @media (max-width: 700px) {
   .contents {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .wrapperArticle .contents {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

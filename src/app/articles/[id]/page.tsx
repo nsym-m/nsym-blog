@@ -8,6 +8,7 @@ import { TwitterCircle } from '../../../components/Icons/Twitter';
 import Link from 'next/link';
 import { Header } from '../../../components/Header/Header';
 import { Metadata } from 'next';
+import { TableOfContents } from '../../../components/TableOfContents/TableOfContents';
 
 const intent = 'https://twitter.com/intent/tweet/'
 
@@ -51,18 +52,28 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function Article({ params }: { params: Promise<{ id: string }> }): Promise<React.JSX.Element> {
   const { id } = await params;
   const article: IArticle = await getArticle(id);
+  
+  const sidebar = article.toc.length > 0 ? (
+    <TableOfContents items={article.toc} />
+  ) : undefined;
+  
+  const articleHeader = (
+    <>
+      <h1 className={utilStyles.headingXl}>{article.header.matterData.title}</h1>
+      <div className={utilStyles.lightText}>
+        <span className={utilStyles.mgr10}>公開日時：<Date dateString={article.header.matterData.createdAt} /></span>
+        {article.header.matterData.updatedAt && (
+          <span className={utilStyles.mgr10}>更新日時：<Date dateString={article.header.matterData.updatedAt ?? ''} /></span>
+        )}
+      </div>
+    </>
+  );
+  
   return (
     <>
       <Header />
-      <ContentsLayout narrow>
+      <ContentsLayout narrow sidebar={sidebar} header={articleHeader}>
         <article>
-          <h1 className={utilStyles.headingXl}>{article.header.matterData.title}</h1>
-          <div className={utilStyles.lightText}>
-            <span className={utilStyles.mgr10}>公開日時：<Date dateString={article.header.matterData.createdAt} /></span>
-            {article.header.matterData.updatedAt && (
-              <span className={utilStyles.mgr10}>更新日時：<Date dateString={article.header.matterData.updatedAt ?? ''} /></span>
-            )}
-          </div>
           <div className={utilStyles.article} dangerouslySetInnerHTML={{ __html: article.bodyMdText }} />
         </article>
         <div className={utilStyles.links}>
