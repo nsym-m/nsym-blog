@@ -1,6 +1,5 @@
 import { getAllArticleIds, getArticle } from '../../../lib/articles'
 import Date from '../../../components/Date'
-import SEO from '../../../components/SEO'
 import ContentsLayout from '../../../components/ContentsLayout/ContentsLayout'
 import utilStyles from '../../../styles/utils.module.css'
 import { Article as IArticle, ArticleIds } from "../../../models"
@@ -8,10 +7,46 @@ import { config } from '../../../config'
 import { TwitterCircle } from '../../../components/Icons/Twitter';
 import Link from 'next/link';
 import { Header } from '../../../components/Header/Header';
+import { Metadata } from 'next';
 
 const intent = 'https://twitter.com/intent/tweet/'
 
 export const dynamicParams = false
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const article = await getArticle(id);
+  const title = article.header.matterData.title;
+  const description = article.header.excerpt;
+  const ogImageUrl = `${config.siteUrl}/og/${id}`;
+
+  return {
+    title: `${title} | ${config.siteTitle}`,
+    description,
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      siteName: config.siteTitle,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImageUrl],
+      creator: `@${config.social.twitter}`,
+      site: `@${config.social.twitter}`,
+    },
+  };
+}
 
 export default async function Article({ params }: { params: Promise<{ id: string }> }): Promise<React.JSX.Element> {
   const { id } = await params;
@@ -19,7 +54,6 @@ export default async function Article({ params }: { params: Promise<{ id: string
   return (
     <>
       <Header />
-      <SEO title={article.header.matterData.title} description={article.header.excerpt} />
       <ContentsLayout >
         <article>
           <h1 className={utilStyles.headingXl}>{article.header.matterData.title}</h1>
