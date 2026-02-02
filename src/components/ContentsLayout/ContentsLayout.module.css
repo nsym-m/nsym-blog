@@ -4,21 +4,20 @@
 
 .contents {
   justify-self: center;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
+  max-width: 1200px;
 }
 
-@media (min-width: 700px) {
-  .contents {
-    max-width: 750px;
-  }
+.narrow {
+  max-width: 750px;
 }
 
 @media (max-width: 700px) {
   .contents {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

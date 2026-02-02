@@ -1,10 +1,16 @@
-.root:first-child {
-  border-top: 1px #aaa solid;
-}
-
 .root {
   display: flex;
-  border-bottom: 1px #e8e6e6 solid;
+  flex-direction: column;
+  background-color: var(--seconory-background);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.root:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .info {
@@ -16,51 +22,48 @@
 
 .title {
   white-space: normal;
-  font-size: 1.4em;
-  margin-block-end: 0.4em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  flex: 1;
-  font-weight: normal;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .titleLink {
-  line-height: 1.8;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  line-clamp: 4;
-  -webkit-line-clamp: 4;
-  margin: 18px;
+  display: block;
+  padding: 1.25rem;
+  text-decoration: none;
+  height: 100%;
 }
 
-.metaInfo > :not(:first-child) {
-  margin-top: 1.6rem;
+.titleLink:hover {
+  text-decoration: none;
+}
+
+.metaInfo {
+  margin-top: auto;
+  padding-top: 0.75rem;
 }
 
 .date {
-  font-size: 13px;
+  font-size: 0.85rem;
+  color: var(--seconory-color);
 }
 
 @media (max-width: 700px) {
-  .root {
-    display: flex;
-  }
-
   .title {
-    font-size: 1.15rem;
+    font-size: 1rem;
+    -webkit-line-clamp: 2;
   }
 
   .titleLink {
-    line-height: 1.6;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
-  }
-
-  .metaInfo > :not(:first-child) {
-    margin-top: 0.4rem;
+    padding: 1rem;
   }
 
   .date {
-    font-size: 13px;
+    font-size: 0.8rem;
   }
 }

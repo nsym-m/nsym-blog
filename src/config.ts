@@ -10,7 +10,6 @@ export const config = {
   image: {
     avatar: '60309119.jpeg',
     header: 'header.jpg',
-    qiita: 'qiita.png',
   },
   excerptLength: 160,
   articleFileName: 'index.md',

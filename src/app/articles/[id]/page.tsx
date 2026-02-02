@@ -54,7 +54,7 @@ export default async function Article({ params }: { params: Promise<{ id: string
   return (
     <>
       <Header />
-      <ContentsLayout >
+      <ContentsLayout narrow>
         <article>
           <h1 className={utilStyles.headingXl}>{article.header.matterData.title}</h1>
           <div className={utilStyles.lightText}>
@@ -69,9 +69,6 @@ export default async function Article({ params }: { params: Promise<{ id: string
           <a href={`${intent}?url=${config.siteUrl}/articles/${article.header.id}&title=${article.header.matterData.title}\n&via=${config.social.twitter}`} target="_blank" rel="noreferrer">
             <TwitterCircle></TwitterCircle>
           </a>
-          <Link href={'/articles/'} className={utilStyles.titleLink}>
-            記事一覧に戻る
-          </Link>
           <Link href={'/'} className={utilStyles.titleLink}>
             ホームに戻る
           </Link>

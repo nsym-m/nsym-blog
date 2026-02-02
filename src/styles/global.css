@@ -12,9 +12,9 @@
 :root[data-theme="light"] {
   color-scheme: light;
   --text-color: #212121;
-  --background-color: #fcfcfc;
+  --background-color: #edf2f7;
   --seconory-color: #535353;
-  --seconory-background: #d5d4d4;
+  --seconory-background: #fff;
   --link-icon: #808080;
 }
 
