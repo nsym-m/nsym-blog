@@ -35,7 +35,6 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 960px;
-  overflow-x: hidden;
 }
 
 /* 記事ラッパー内のコンテンツ幅を調整 */
@@ -90,7 +89,7 @@
     padding: 0 1rem;
     box-sizing: border-box;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   .header {
@@ -99,7 +98,7 @@
 
   .layout {
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   .withSidebar {
@@ -114,7 +113,7 @@
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* モバイルではサイドバーを非表示（フローティング目次は Portal で body 直下に表示） */
