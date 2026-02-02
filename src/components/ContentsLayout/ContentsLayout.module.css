@@ -4,11 +4,11 @@
 
 .contents {
   justify-self: center;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1200px;
+  max-width: 960px;
   overflow-x: hidden;
 }
 
