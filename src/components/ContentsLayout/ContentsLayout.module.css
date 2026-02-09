@@ -89,7 +89,6 @@
     padding: 0 1rem;
     box-sizing: border-box;
     max-width: 100%;
-    overflow-x: clip;
   }
 
   .header {
@@ -98,7 +97,6 @@
 
   .layout {
     max-width: 100%;
-    overflow-x: clip;
   }
 
   .withSidebar {
@@ -113,7 +111,6 @@
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
-    overflow-x: clip;
   }
 
   /* モバイルではサイドバーを非表示（フローティング目次は Portal で body 直下に表示） */
