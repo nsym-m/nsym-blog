@@ -9,6 +9,8 @@ import remark2rehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
+import { visit } from 'unist-util-visit'
+import type { Element } from 'hast'
 import { FrontMatter, ArticleIds, Article, ArticleHeaders, TocItem } from '../models'
 import { config } from '../config'
 
@@ -94,6 +96,50 @@ function generateSlug(text: string): string {
     .replace(/^-|-$/g, '') // 先頭と末尾のハイフンを削除
 }
 
+// すべてのコードブロックに行番号を追加するカスタムプラグイン
+function rehypeAddLineNumbers() {
+  return (tree: any) => {
+    visit(tree, 'element', (node: Element) => {
+      // <pre>要素を探す（コードブロックの親要素）
+      if (node.tagName === 'pre') {
+        // <pre>の中の<code>要素を探す
+        const codeElement = node.children?.find(
+          (child: any) => child.type === 'element' && child.tagName === 'code'
+        ) as Element | undefined
+
+        if (codeElement && codeElement.properties) {
+          // 子要素にdata-line属性を持つ要素があるか確認（コードブロックの行）
+          // data-line属性が存在すれば（値が空でも）行としてカウント
+          const countLines = (element: any): number => {
+            let count = 0
+            if (element.type === 'element' && element.properties && 'data-line' in element.properties) {
+              count = 1
+            }
+            if (element.children) {
+              count += element.children.reduce((sum: number, child: any) => sum + countLines(child), 0)
+            }
+            return count
+          }
+
+          const lineCount = countLines(codeElement)
+          if (lineCount > 0) {
+            // data-line-numbers属性を追加
+            if (!codeElement.properties) {
+              codeElement.properties = {}
+            }
+            codeElement.properties['data-line-numbers'] = ''
+            // 最大桁数を計算して追加
+            const maxDigits = String(lineCount).length
+            codeElement.properties['data-line-numbers-max-digits'] = String(maxDigits)
+            // デバッグ用（本番では削除可能）
+            console.log(`Added line numbers to code block: ${lineCount} lines, ${maxDigits} digits`)
+          }
+        }
+      }
+    })
+  }
+}
+
 export async function getSortedArticlesData(): Promise<ArticleHeaders> {
   // Get file names under /articles
   const dirNames = fs.readdirSync(articlesDirectory)
@@ -156,6 +202,7 @@ export async function getArticle(id: string): Promise<Article> {
       .use(rehypePrettyCode, {
         theme: theme,
       })
+      .use(rehypeAddLineNumbers) // すべてのコードブロックに行番号を追加
       .use(rehypeStringify)
       .process(content)
   ).toString()

@@ -72,13 +72,45 @@ pre code {
   border-radius: 8px;
   padding: 1em 0.5em 1em 0.5em;
   display: block;
-  white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
   box-sizing: border-box;
   min-width: 0;
   width: 100%;
   max-width: 100%;
+}
+
+/* 行番号のスタイル */
+code[data-line-numbers],
+.article code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before,
+.article code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1.5rem;
+  text-align: right;
+  color: #6e7681;
+  user-select: none;
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before,
+.article code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 1.5rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before,
+.article code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits="4"] > [data-line]::before,
+.article code[data-line-numbers-max-digits="4"] > [data-line]::before {
+  width: 2.5rem;
 }
 
 code {
