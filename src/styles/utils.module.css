@@ -65,12 +65,29 @@
   word-break: break-word;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
   box-sizing: border-box;
 }
 
 .article * {
-  max-width: 100%;
   box-sizing: border-box;
+}
+
+/* 本文のみ max-width を適用（pre/code/figure は別扱い） */
+.article p,
+.article li,
+.article blockquote,
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article td,
+.article th {
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .article pre,
@@ -80,6 +97,7 @@
   width: 100%;
   overflow-x: auto;
   box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
 
 .article pre code {
@@ -89,6 +107,13 @@
   box-sizing: border-box;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.article ul,
+.article ol {
+  max-width: 100%;
 }
 
 @media (max-width: 700px) {
@@ -100,10 +125,6 @@
 .article p {
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.article p {
-  white-space: pre-wrap;
 }
 
 .article blockquote p {
